@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IBook.View.PageAccountManagement">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <SearchBar  Placeholder="Nhập tên đăng nhập"/>
+            <ListView >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Xoá tất cả" />
+                                <MenuItem Text="Xoá"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding TenNguoiDung}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding TenDangNhap}" VerticalTextAlignment="Center" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

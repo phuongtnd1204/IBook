@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IBook.View.PageAccountDetail">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="LableLeft">
+                <Setter Property="HorizontalOptions"
+                        Value="Start" />
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style  TargetType="Label" x:Key="LableRight">
+                <Setter Property="HorizontalOptions"
+                        Value="End" />
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="20" Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="Mã Người Dùng" Grid.Column="0" Grid.Row="0" Style="{StaticResource LableLeft}"/>
+            <Label Text="Admin?" Grid.Column="0" Grid.Row="1" Style="{StaticResource LableLeft}"/>
+            <Label Text="Tên Người Dùng" Grid.Column="0" Grid.Row="2" Style="{StaticResource LableLeft}"/>
+            <Label Text="Số Điện Thoại" Grid.Column="0" Grid.Row="3" Style="{StaticResource LableLeft}"/>
+            <Label Text="Tên Đăng Nhập" Grid.Column="0" Grid.Row="4" Style="{StaticResource LableLeft}"/>
+
+            <Label Text="{Binding MaNguoiDung}" Grid.Column="1" Grid.Row="0" Style="{StaticResource LableRight}"/>
+            <Switch Grid.Column="1" Grid.Row="1" IsToggled="{Binding isadmin}"/>
+            <Label Text="{Binding TenNguoiDung}" Grid.Column="1" Grid.Row="2" Style="{StaticResource LableRight}"/>
+            <Label Text="{Binding SoDienThoai}" Grid.Column="1" Grid.Row="3" Style="{StaticResource LableRight}"/>
+            <Label Text="{Binding TenDangNhap}" Grid.Column="1" Grid.Row="4" Style="{StaticResource LableRight}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

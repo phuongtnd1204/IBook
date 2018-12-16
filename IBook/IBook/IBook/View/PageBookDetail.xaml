@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IBook.View.PageBookDetail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="sv.png"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Image Source="{Binding Hinh}" HorizontalOptions="CenterAndExpand" HeightRequest="200"/>
+            <Label Text="TÊN SÁCH"/>
+            <Entry  Text="{Binding TenSach}" />
+            <Picker  ItemDisplayBinding="{Binding TenTacGia}">
+            </Picker>
+            <Picker ItemDisplayBinding="{Binding TenTheLoai}">
+            </Picker>
+            <Label Text="SỐ LƯỢNG"/>
+            <Entry  Text="{Binding SoLuong}" Keyboard="Numeric"/>
+            <Label Text="GIÁ"/>
+            <Entry Text="{Binding GiaBan}" Keyboard="Numeric"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IBook.View.PageUserAccount">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightGray">
+            <StackLayout BackgroundColor="White">
+                <StackLayout Orientation="Horizontal" Margin="10,10">
+                    <Image Source="round_person_outline_black_18dp.png" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Thông tin tài khoản" VerticalOptions="CenterAndExpand"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="Chỉnh sửa"/>
+                        <Image Source="round_chevron_right_black_18dp.png"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btn_edit"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView HeightRequest="1" BackgroundColor="Gray"/>
+                <Grid HeightRequest="75" Margin="10,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Họ và tên" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="{Binding TenNguoiDung}" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="Số điện thoại" Grid.Column="0" Grid.Row="1"/>
+                    <Label Text="{Binding SoDienThoai}" Grid.Column="1" Grid.Row="1"/>
+                    <Label Text="Tên đăng nhập" Grid.Column="0" Grid.Row="2"/>
+                    <Label x:Name="txtTenDangNhap" Text="{Binding TenDangNhap}" Grid.Column="1" Grid.Row="2"/>
+                </Grid>
+                <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="10,0"/>
+                <Grid HeightRequest="50" Margin="10,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Số đơn hàng thành công" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="0" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="Số tiền đã thanh toán" Grid.Column="0" Grid.Row="1"/>
+                    <Label Text="0" Grid.Column="1" Grid.Row="1"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout BackgroundColor="White" Margin="0,5">
+                <StackLayout Orientation="Horizontal" Margin="10,10">
+                    <Image Source="round_history_black_18dp.png" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Lịch sử mua hàng" VerticalOptions="CenterAndExpand"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="Xem thêm"/>
+                        <Image Source="baseline_chevron_right_black_18dp.png"/>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView HeightRequest="2" BackgroundColor="LightGray"/>
+                <StackLayout Orientation="Horizontal" Margin="10,10">
+                    <Image Source="round_favorite_border_black_18dp.png" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Sản phẩm yêu thích" VerticalOptions="CenterAndExpand"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="Xem thêm"/>
+                        <Image Source="baseline_chevron_right_black_18dp.png"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Đăng xuất" Margin="20,0" BackgroundColor="#636e72" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

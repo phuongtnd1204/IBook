@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IBook.View.PageBookManagement">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="add.png"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <SearchBar Placeholder="Nhập tên sách"/>
+            <ListView HasUnevenRows='True'>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="100" >
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Xoá tất cả"/>
+                                <MenuItem Text="Xoá"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Hinh}" HeightRequest="90" WidthRequest="60"/>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding TenSach}" />
+                                    <Label Text="{Binding TacGia}" />
+                                </StackLayout>
+                                <Label Text="{Binding GiaBan}" VerticalOptions="End" VerticalTextAlignment="End"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

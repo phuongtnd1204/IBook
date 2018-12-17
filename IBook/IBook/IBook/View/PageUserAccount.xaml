@@ -12,7 +12,7 @@
                         <Label Text="Chỉnh sửa"/>
                         <Image Source="round_chevron_right_black_18dp.png"/>
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="btn_edit"/>
+                            <TapGestureRecognizer />
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </StackLayout>

@@ -7,6 +7,9 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="10">
+            <Label Text="???"/>
+            <SearchBar Placeholder="??? too"/>
+            <Entry></Entry>
             <SearchBar Placeholder="Nhập tên sách"/>
             <ListView HasUnevenRows='True'>
                 <ListView.ItemTemplate>

@@ -10,8 +10,7 @@ namespace IBook
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new View.PageLogin());
         }
 
         protected override void OnStart()

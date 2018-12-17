@@ -752,10 +752,11 @@
   },
   "libraries": {
     "sqlite-net-pcl/1.5.231": {
-      "sha512": "Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
+      "sha512": "B9jScvqkishSMkpa9Mc4Q85LTHxRTzcUXZx9EQqgrvdz7MFEDHfpiPcKdjy1qXHdmHttEXfY4h6gu4FlgWP2Sw==",
       "type": "package",
       "path": "sqlite-net-pcl/1.5.231",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard1.1/SQLite-net.deps.json",
         "lib/netstandard1.1/SQLite-net.dll",
@@ -846,10 +847,11 @@
       ]
     },
     "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
+      "sha512": "6y1rnRKVqgRWpGy+mjlgf5cxRYiHsiGS4b51/AJxxkEyf7w1XJGzcLl4wV8Yjpv6/kKxsIBoAgqxIdFElQcNkA==",
       "type": "package",
       "path": "xamarin.forms/3.1.0.697729",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
@@ -1014,11 +1016,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\TaiLieu\\HK7\\Xamarin\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
+      "projectUniqueName": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
       "projectName": "IBook.iOS",
-      "projectPath": "E:\\TaiLieu\\HK7\\Xamarin\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
+      "projectPath": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
       "packagesPath": "C:\\Users\\Xon\\.nuget\\packages\\",
-      "outputPath": "E:\\TaiLieu\\HK7\\Xamarin\\IBook\\IBook\\IBook\\IBook.iOS\\obj\\",
+      "outputPath": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1035,8 +1037,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "E:\\TaiLieu\\HK7\\Xamarin\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
-              "projectPath": "E:\\TaiLieu\\HK7\\Xamarin\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
+            "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
+              "projectPath": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
             }
           }
         }

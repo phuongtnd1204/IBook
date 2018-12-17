@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmode="clr-namespace:IBook.ViewModels"
              x:Class="IBook.View.PageLogin">
+    <ContentPage.BindingContext>
+        <viewmode:LoginViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
             <StackLayout HeightRequest="100" Margin="0,50">
@@ -9,10 +13,10 @@
                 <Label Text="Chào mừng bạn đến IBook" HorizontalOptions="CenterAndExpand" FontSize="20"/>
             </StackLayout>
             <StackLayout>
-                <Entry Placeholder="Tên đăng nhập" Margin="15,0"/>
-                <Entry Placeholder="Mật khẩu" Margin="15,0" IsPassword="True"/>
-                <Button Text="Đăng nhập" Margin="50,30,50,0" BorderRadius="20" BorderWidth="1" BorderColor="Gray" BackgroundColor="White" HeightRequest="40"/>
-                <Button Text="Đăng ký" Margin="50,0" BorderRadius="20" BorderWidth="1" BorderColor="Gray" BackgroundColor="White" HeightRequest="40"/>
+                <Entry Text="{Binding TenDangNhap, Mode=TwoWay}" Placeholder="Tên đăng nhập" Margin="15,0"/>
+                <Entry Text="{Binding MatKhau, Mode=TwoWay}" Placeholder="Mật khẩu" Margin="15,0" IsPassword="True"/>
+                <Button Command="{Binding SignInCommand}" Text="Đăng nhập" Margin="50,30,50,0" BorderRadius="20" BorderWidth="1" BorderColor="Gray" BackgroundColor="White" HeightRequest="40"/>
+                <Button Command="{Binding SignUpCommand}" Text="Đăng ký" Margin="50,0" BorderRadius="20" BorderWidth="1" BorderColor="Gray" BackgroundColor="White" HeightRequest="40" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -58,13 +58,18 @@ namespace IBook.Services
             var json = JsonConvert.SerializeObject(user);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
+<<<<<<< HEAD
             var httpResponse = await Client.PostAsync(URL, data);
+=======
+            var httpResponse = await Client.PostAsync(URL, data).Result;
+>>>>>>> 45134c2f879e68129cd9fe22cac20f60e9dfae89
             if (httpResponse.IsSuccessStatusCode)
             {
                 return true;
             }
             else return false;
         }
+<<<<<<< HEAD
         
         public async Task<List<User>> ListAllUser()
         {
@@ -74,6 +79,16 @@ namespace IBook.Services
             //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<User>>();
             return userList;
+=======
+
+        public async  Task<List<User>> ListAllUser()
+        {
+            URL = urlHome + "api/users";
+            var httpResponse = await Client.GetAsync(URL);
+                var responseList = httpResponse.Content.ReadAsStringAsync().Result;
+                var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+                return userList;
+>>>>>>> 45134c2f879e68129cd9fe22cac20f60e9dfae89
         }
         public List<Book> ListAllBook()
         {

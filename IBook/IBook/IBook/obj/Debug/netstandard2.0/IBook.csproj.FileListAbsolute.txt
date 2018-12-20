@@ -31,6 +31,8 @@ E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\View\PageU
 E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.csproj.CoreCompileInputs.cache
 E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.AssemblyInfoInputs.cache
 E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.AssemblyInfo.cs
-E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\XamlC.stamp
 E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.dll
 E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.pdb
+E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.csprojAssemblyReference.cache
+E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\View\PageUserHome.xaml.g.cs
+E:\TaiLieu\HK7\IBook\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\XamlC.stamp

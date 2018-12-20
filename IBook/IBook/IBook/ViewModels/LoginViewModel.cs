@@ -11,10 +11,28 @@ namespace IBook.ViewModels
 {
     public class LoginViewModel : INotifyPropertyChanged
     {
+        public LoginViewModel()
+        {
+            userRepository = new UserRepository();
+            SignInCommand = new Command(SignIn, CanExe);
+            SignUpCommand = new Command(SignUp);
+        }
+
+        #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
-        public UserRepository userRepository;
+        private void RaisePropertyChanged(string PropertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+        }
+        #endregion
+
+        #region ICommand
         public ICommand SignInCommand { get; private set; }
         public ICommand SignUpCommand { get; private set; }
+        #endregion
+
+        #region Khai bao thuoc tinh
+        public UserRepository userRepository;
         private string _tenDangNhap;
         public string TenDangNhap
         {
@@ -25,13 +43,6 @@ namespace IBook.ViewModels
                 RaisePropertyChanged("TenDangNhap");
                 ((Command)SignInCommand).ChangeCanExecute();
             }
-        }
-        public bool CanExe()
-        {
-            if (string.IsNullOrEmpty(_tenDangNhap) || string.IsNullOrEmpty(_matKhau))
-                return false;
-            else
-                return true;
         }
         private string _matKhau;
         public string MatKhau
@@ -44,11 +55,15 @@ namespace IBook.ViewModels
                 ((Command)SignInCommand).ChangeCanExecute();
             }
         }
-        public LoginViewModel()
+        #endregion
+
+        #region Func
+        public bool CanExe()
         {
-            userRepository = new UserRepository();
-            SignInCommand = new Command(SignIn, CanExe);
-            SignUpCommand = new Command(SignUp);
+            if (string.IsNullOrEmpty(_tenDangNhap) || string.IsNullOrEmpty(_matKhau))
+                return false;
+            else
+                return true;
         }
         private void SignIn()
         {
@@ -66,19 +81,24 @@ namespace IBook.ViewModels
                     }
                 case 2:
                     {
-                        Application.Current.MainPage.Navigation.PushAsync(new View.PageHome());
+                        Application.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());
                         break;
                     }
+
+                default:
+                    {
+                        Application.Current.MainPage.DisplayAlert("Thông báo", "Lỗi kết nối", "OK");
+                        break;
+                    }
+
             }
         }
         private void SignUp()
         {
             Application.Current.MainPage.Navigation.PushAsync(new View.PageSignUp());
         }
+        #endregion
 
-        private void RaisePropertyChanged(string PropertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
-        }
+
     }
 }

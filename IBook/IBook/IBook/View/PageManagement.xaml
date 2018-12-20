@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmode="clr-namespace:IBook.ViewModels"
-             x:Class="IBook.View.PageManagement">
+             x:Class="IBook.View.PageManagement"
+             NavigationPage.HasBackButton="False">
     <ContentPage.BindingContext>
         <viewmode:ManagementViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Log out"/>
+        <ToolbarItem Text="Log out" Command="{Binding ToLogOutCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="10" BackgroundColor="LightGray">

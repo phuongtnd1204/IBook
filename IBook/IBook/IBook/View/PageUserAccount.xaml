@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IBook.View.PageUserAccount">
+             xmlns:viewmode="clr-namespace:IBook.ViewModels"
+             x:Class="IBook.View.PageUserAccount"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <viewmode:UserAccountViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout BackgroundColor="LightGray">
             <StackLayout BackgroundColor="White">
@@ -12,7 +17,7 @@
                         <Label Text="Chỉnh sửa"/>
                         <Image Source="round_chevron_right_black_18dp.png"/>
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer />
+                            <TapGestureRecognizer Command="{Binding ToDetailCommand}"/>
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </StackLayout>

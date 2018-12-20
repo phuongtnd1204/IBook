@@ -1,4 +1,5 @@
 ﻿using IBook.Models;
+using IBook.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,13 +8,24 @@ namespace IBook.Repository
 {
     public class UserRepository
     {
+        Service service;
+
+        public UserRepository()
+        {
+            service = new Service();
+        }
+
         public int SignIn(string tenDangNhap, string matKhau)
         {
-            return 1;
+            return service.SignIn(tenDangNhap, matKhau);
         }
-        public void SignUp()
+        public bool SignUp(User user)
         {
-
+            return service.SignUp(user);
+        }
+        public List<User> ListAll()
+        {
+            return service.ListAllUser();
         }
         public void Update()
         {

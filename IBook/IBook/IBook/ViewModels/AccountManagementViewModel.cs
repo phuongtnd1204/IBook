@@ -1,9 +1,8 @@
 ﻿using IBook.Models;
 using IBook.Repository;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using System.Threading.Tasks;
+using IBook.Services;
 
 namespace IBook.ViewModels
 {
@@ -12,9 +11,14 @@ namespace IBook.ViewModels
         public AccountManagementViewModel()
         {
             userRepository = new UserRepository();
-            UserList = new ObservableCollection<User>(userRepository.ListAll());
-        }
+            GetUserList();
+;        }
         private UserRepository userRepository { get; set; }
+
+        private async void GetUserList()
+        {
+            UserList =  new ObservableCollection<User>(await userRepository.ListAllAsync()) ;
+        }
         public ObservableCollection<User> UserList { get; set; }
     }
 }

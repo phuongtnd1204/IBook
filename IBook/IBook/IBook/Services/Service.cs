@@ -26,7 +26,7 @@ namespace IBook.Services
         public int SignIn(string tendn, string matkhau)
         {
             URL = urlHome + "api/user/LogIn";
-            obj = new { TenDangNhap = "tendn", MatKhau = "matkhau" };
+            obj = new { TenDangNhap = tendn, MatKhau = matkhau };
             var json = JsonConvert.SerializeObject(obj);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -57,7 +57,7 @@ namespace IBook.Services
             var json = JsonConvert.SerializeObject(user);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var httpResponse = Client.PostAsync(URL, data).Result;
+            var httpResponse = await Client.PostAsync(URL, data).Result;
             if (httpResponse.IsSuccessStatusCode)
             {
                 return true;
@@ -65,9 +65,13 @@ namespace IBook.Services
             else return false;
         }
 
-        public List<User> ListAllUser()
+        public async  Task<List<User>> ListAllUser()
         {
-
+            URL = urlHome + "api/users";
+            var httpResponse = await Client.GetAsync(URL);
+                var responseList = httpResponse.Content.ReadAsStringAsync().Result;
+                var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+                return userList;
         }
         public List<Book> ListAllBook()
         {

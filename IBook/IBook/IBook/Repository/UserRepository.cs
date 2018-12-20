@@ -3,6 +3,7 @@ using IBook.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IBook.Repository
 {
@@ -19,13 +20,13 @@ namespace IBook.Repository
         {
             return service.SignIn(tenDangNhap, matKhau);
         }
-        public bool SignUp(User user)
+        public async Task<bool> SignUp(User user)
         {
-            return service.SignUp(user);
+            return await service.SignUp(user);
         }
-        public List<User> ListAll()
+        public async Task<List<User>> ListAll()
         {
-            return service.ListAllUser();
+            return await service.ListAllUser();
         }
         public void Update()
         {

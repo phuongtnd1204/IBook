@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -70,9 +71,9 @@ namespace IBook.ViewModels
         #endregion
 
         #region Func
-        public void SignUp()
+        public async void SignUp()
         {
-            if(userRepository.SignUp(user))
+            if(await userRepository.SignUp(user))
             {
                 Application.Current.MainPage.DisplayAlert("Thông báo", "Đăng ký thành công", "OK");
                 Application.Current.MainPage.Navigation.PopAsync();

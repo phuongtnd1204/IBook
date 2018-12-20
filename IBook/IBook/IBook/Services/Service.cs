@@ -20,13 +20,13 @@ namespace IBook.Services
         public Service()
         {
             URL = "";
-            urlHome = "http://localhost:49386";
+            urlHome = "https://webapplication120181217021027.azurewebsites.net/";
             Client  = new HttpClient();
         }
         public int SignIn(string tendn, string matkhau)
         {
             URL = urlHome + "api/user/LogIn";
-            obj = new { TenDangNhap = "tendn", MatKhau = "matkhau" };
+            obj = new { TenDangNhap = tendn, MatKhau = matkhau };
             var json = JsonConvert.SerializeObject(obj);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -42,7 +42,7 @@ namespace IBook.Services
                 else
                 {
                     App.Current.Properties["ID"] = user.MaNguoiDung;
-                    if (user.IsAdmin == true)
+                    if (user.IsAdmin == 1)
                         return 1;
                     else
                         return 2;
@@ -51,35 +51,41 @@ namespace IBook.Services
             return 3;
  
         }
-        public bool SignUp(User user)
+        public async Task<bool> SignUp(User user)
         {
-            URL = urlHome + "api/user/LogIn";
+            URL = urlHome + "api/user/add";
+            user.IsAdmin = 0;
             var json = JsonConvert.SerializeObject(user);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var httpResponse = Client.PostAsync(URL, data).Result;
+            var httpResponse = await Client.PostAsync(URL, data);
             if (httpResponse.IsSuccessStatusCode)
             {
                 return true;
             }
             else return false;
         }
-
-        public List<User> ListAllUser()
+        
+        public async Task<List<User>> ListAllUser()
         {
-
+            URL = urlHome + "api/users";
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+            var userList = JObject.Parse(responseList)["Result"].ToObject<List<User>>();
+            return userList;
         }
         public List<Book> ListAllBook()
         {
-
+            return new List<Book>();
         }
         public List<BookKind> ListAllBookKind()
         {
-
+            return new List<BookKind>();
         }
         public List<Author> ListAllAuthor()
         {
-
+            return new List<Author>();
         }
     }
 }

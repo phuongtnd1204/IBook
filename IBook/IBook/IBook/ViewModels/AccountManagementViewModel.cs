@@ -12,7 +12,11 @@ namespace IBook.ViewModels
         public AccountManagementViewModel()
         {
             userRepository = new UserRepository();
-            UserList = new ObservableCollection<User>(userRepository.ListAll());
+            GetUserList();
+        }
+        public async void GetUserList()
+        {
+            UserList = new ObservableCollection<User>(await userRepository.ListAll());
         }
         private UserRepository userRepository { get; set; }
         public ObservableCollection<User> UserList { get; set; }

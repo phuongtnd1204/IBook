@@ -3,6 +3,7 @@ using IBook.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IBook.Repository
 {
@@ -18,9 +19,9 @@ namespace IBook.Repository
         {
 
         }
-        public List<Book> ListAll()
+        public async Task<List<Book>> ListAll()
         {
-            return service.ListAllBook();
+            return await service.ListAllBook();
         }
         public void Update()
         {

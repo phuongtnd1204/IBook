@@ -8763,11 +8763,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook.UWP\\IBook.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.UWP\\IBook.UWP.csproj",
       "projectName": "IBook.UWP",
-      "projectPath": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook.UWP\\IBook.UWP.csproj",
+      "projectPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.UWP\\IBook.UWP.csproj",
       "packagesPath": "C:\\Users\\Xon\\.nuget\\packages\\",
-      "outputPath": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook.UWP\\obj\\",
+      "outputPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -8787,8 +8787,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
-              "projectPath": "E:\\TaiLieu\\HK7\\IBook\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
+            "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
+              "projectPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
             }
           }
         }

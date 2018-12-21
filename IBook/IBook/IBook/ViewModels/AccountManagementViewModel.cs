@@ -1,12 +1,14 @@
 ﻿using IBook.Models;
 using IBook.Repository;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using IBook.Services;
+using System.ComponentModel;
+using System.Text;
 
 namespace IBook.ViewModels
 {
-    public class AccountManagementViewModel
+    public class AccountManagementViewModel : INotifyPropertyChanged
     {
         public AccountManagementViewModel()
         {
@@ -16,8 +18,17 @@ namespace IBook.ViewModels
         public async void GetUserList()
         {
             UserList = new ObservableCollection<User>(await userRepository.ListAll());
+            RaisePropertyChanged("UserList");
         }
         private UserRepository userRepository { get; set; }
         public ObservableCollection<User> UserList { get; set; }
+<<<<<<< HEAD
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged(string PropertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+        }
+=======
+>>>>>>> e9974ea328a6a44cb0a3bef504f054bcde0ec58f
     }
 }

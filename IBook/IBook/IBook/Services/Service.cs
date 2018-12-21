@@ -75,17 +75,39 @@ namespace IBook.Services
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<User>>();
             return userList;
         }
+<<<<<<< HEAD
+
+        public async Task<List<Book>> ListAllBook()
+        {
+            URL = urlHome + "api/books";
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+            var userList = JObject.Parse(responseList)["Result"].ToObject<List<Book>>();
+            return userList;
+=======
         public List<Book> ListAllBook()
         {
             return new List<Book>();
+>>>>>>> e9974ea328a6a44cb0a3bef504f054bcde0ec58f
         }
-        public List<BookKind> ListAllBookKind()
+        public async Task<List<BookKind>> ListAllBookKind()
         {
-            return new List<BookKind>();
+            URL = urlHome + "api/bookkinds";
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+            var bookKindList = JObject.Parse(responseList)["Result"].ToObject<List<BookKind>>();
+            return bookKindList;
         }
-        public List<Author> ListAllAuthor()
+        public async Task<List<Author>> ListAllAuthor()
         {
-            return new List<Author>();
+            URL = urlHome + "api/authors";
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+            var authorList = JObject.Parse(responseList)["Result"].ToObject<List<Author>>();
+            return authorList;
         }
     }
 }

@@ -496,10 +496,11 @@
       ]
     },
     "sqlite-net-pcl/1.5.231": {
-      "sha512": "Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
+      "sha512": "B9jScvqkishSMkpa9Mc4Q85LTHxRTzcUXZx9EQqgrvdz7MFEDHfpiPcKdjy1qXHdmHttEXfY4h6gu4FlgWP2Sw==",
       "type": "package",
       "path": "sqlite-net-pcl/1.5.231",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard1.1/SQLite-net.deps.json",
         "lib/netstandard1.1/SQLite-net.dll",
@@ -594,10 +595,11 @@
       ]
     },
     "Xamarin.Forms/3.4.0.1008975": {
-      "sha512": "036/h8HtzRFgTrfhY57IeHoYRsPTO2XTA6uUFdmZzw2QR1sdszfofhI9HrCJTRx6fCzmjPg5Cxk5chYrjKarNw==",
+      "sha512": "tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
       "type": "package",
       "path": "xamarin.forms/3.4.0.1008975",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
@@ -750,23 +752,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\QuocPham\\.nuget\\packages\\": {},
+    "C:\\Users\\Xon\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook\\IBook.csproj",
+      "projectUniqueName": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj",
       "projectName": "IBook",
-      "projectPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook\\IBook.csproj",
-      "packagesPath": "C:\\Users\\QuocPham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook\\obj\\",
+      "projectPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj",
+      "packagesPath": "C:\\Users\\Xon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\QuocPham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Xon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

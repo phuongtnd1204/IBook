@@ -1177,10 +1177,11 @@
       ]
     },
     "sqlite-net-pcl/1.5.231": {
-      "sha512": "Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
+      "sha512": "B9jScvqkishSMkpa9Mc4Q85LTHxRTzcUXZx9EQqgrvdz7MFEDHfpiPcKdjy1qXHdmHttEXfY4h6gu4FlgWP2Sw==",
       "type": "package",
       "path": "sqlite-net-pcl/1.5.231",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard1.1/SQLite-net.deps.json",
         "lib/netstandard1.1/SQLite-net.dll",
@@ -1285,10 +1286,11 @@
       ]
     },
     "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
+      "sha512": "6y1rnRKVqgRWpGy+mjlgf5cxRYiHsiGS4b51/AJxxkEyf7w1XJGzcLl4wV8Yjpv6/kKxsIBoAgqxIdFElQcNkA==",
       "type": "package",
       "path": "xamarin.forms/3.1.0.697729",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
@@ -1451,20 +1453,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\QuocPham\\.nuget\\packages\\": {}
+    "C:\\Users\\Xon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
       "projectName": "IBook.iOS",
-      "projectPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
-      "packagesPath": "C:\\Users\\QuocPham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook.iOS\\obj\\",
+      "projectPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
+      "packagesPath": "C:\\Users\\Xon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\QuocPham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Xon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1477,8 +1479,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
-              "projectPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
+            "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
+              "projectPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
             }
           }
         }

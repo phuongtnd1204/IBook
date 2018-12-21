@@ -172,7 +172,7 @@
     "sqlite-net-pcl/1.5.231": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
+      "sha512": "sha512-B9jScvqkishSMkpa9Mc4Q85LTHxRTzcUXZx9EQqgrvdz7MFEDHfpiPcKdjy1qXHdmHttEXfY4h6gu4FlgWP2Sw==",
       "path": "sqlite-net-pcl/1.5.231",
       "hashPath": "sqlite-net-pcl.1.5.231.nupkg.sha512"
     },
@@ -200,7 +200,7 @@
     "Xamarin.Forms/3.4.0.1008975": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-036/h8HtzRFgTrfhY57IeHoYRsPTO2XTA6uUFdmZzw2QR1sdszfofhI9HrCJTRx6fCzmjPg5Cxk5chYrjKarNw==",
+      "sha512": "sha512-tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
       "path": "xamarin.forms/3.4.0.1008975",
       "hashPath": "xamarin.forms.3.4.0.1008975.nupkg.sha512"
     }

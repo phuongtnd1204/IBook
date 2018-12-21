@@ -24,11 +24,7 @@ namespace IBook.Repository
         {
             return await service.SignUp(user);
         }
-<<<<<<< HEAD
         public async Task<List<User>> ListAll()
-=======
-        public async Task<List<User>> ListAllAsync()
->>>>>>> 45134c2f879e68129cd9fe22cac20f60e9dfae89
         {
             return await service.ListAllUser();
         }

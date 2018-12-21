@@ -8,7 +8,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Padding="10">
-            <SearchBar  Placeholder="Nhập tên đăng nhập"/>
+            <SearchBar  Placeholder="Nhập tên đăng nhập" HeightRequest="35"/>
             <ListView ItemsSource="{Binding UserList}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -75,6 +75,7 @@ namespace IBook.Services
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<User>>();
             return userList;
         }
+<<<<<<< HEAD
 
         public async Task<List<Book>> ListAllBook()
         {
@@ -84,6 +85,11 @@ namespace IBook.Services
             //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<Book>>();
             return userList;
+=======
+        public List<Book> ListAllBook()
+        {
+            return new List<Book>();
+>>>>>>> e9974ea328a6a44cb0a3bef504f054bcde0ec58f
         }
         public async Task<List<BookKind>> ListAllBookKind()
         {

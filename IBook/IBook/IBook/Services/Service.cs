@@ -41,7 +41,8 @@ namespace IBook.Services
                 }
                 else
                 {
-                    App.Current.Properties["ID"] = user.MaNguoiDung;
+                    App.mainUser = new User();
+                    App.mainUser = user;
                     if (user.IsAdmin == 1)
                         return 1;
                     else
@@ -75,7 +76,6 @@ namespace IBook.Services
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<User>>();
             return userList;
         }
-<<<<<<< HEAD
 
         public async Task<List<Book>> ListAllBook()
         {
@@ -85,11 +85,6 @@ namespace IBook.Services
             //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<Book>>();
             return userList;
-=======
-        public List<Book> ListAllBook()
-        {
-            return new List<Book>();
->>>>>>> e9974ea328a6a44cb0a3bef504f054bcde0ec58f
         }
         public async Task<List<BookKind>> ListAllBookKind()
         {
@@ -108,6 +103,40 @@ namespace IBook.Services
             //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
             var authorList = JObject.Parse(responseList)["Result"].ToObject<List<Author>>();
             return authorList;
+        }
+
+        public async Task<bool> UpdateUser(User user)
+        {
+            URL = urlHome + "api/user/update";
+            var json = JsonConvert.SerializeObject(user);
+
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await Client.PutAsync(URL, data);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public async Task<List<Book>> ListChosenBook()
+        {
+            List<Book> bookList = new List<Book>();
+            for (int i = 0; i < App.listChon.Count; i++)
+            {
+                URL = urlHome + "api/book?masach=" + App.listChon[i];
+                var httpResponse = await Client.GetAsync(URL);
+                var responseList = await httpResponse.Content.ReadAsStringAsync();
+                var book = JObject.Parse(responseList)["Result"].ToObject<Book>();
+                book.SoLuong = 1;
+                bookList.Add(book);
+            }
+            return bookList;
         }
     }
 }

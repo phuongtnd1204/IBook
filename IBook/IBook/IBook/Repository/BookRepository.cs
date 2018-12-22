@@ -23,6 +23,10 @@ namespace IBook.Repository
         {
             return await service.ListAllBook();
         }
+        public async Task<List<Book>> ListSomeBook()
+        {
+            return await service.ListChosenBook();
+        }
         public void Update()
         {
 
@@ -31,9 +35,8 @@ namespace IBook.Repository
         {
 
         }
-        public void Delete()
+        public void Delete(string ID)
         {
-
         }
         public void DeleteAll()
         {

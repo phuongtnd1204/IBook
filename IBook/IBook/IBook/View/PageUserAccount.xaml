@@ -33,7 +33,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Label Text="Họ và tên" Grid.Column="0" Grid.Row="0"/>
-                    <Label Text="{Binding TenNguoiDung}" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="{Binding HoVaTen}" Grid.Column="1" Grid.Row="0"/>
                     <Label Text="Số điện thoại" Grid.Column="0" Grid.Row="1"/>
                     <Label Text="{Binding SoDienThoai}" Grid.Column="1" Grid.Row="1"/>
                     <Label Text="Tên đăng nhập" Grid.Column="0" Grid.Row="2"/>
@@ -75,7 +75,7 @@
                 </StackLayout>
             </StackLayout>
 
-            <Button Text="Đăng xuất" Margin="20,0" BackgroundColor="#636e72" TextColor="White"/>
+            <Button Text="Đăng xuất" Command="{Binding LogOutCommand}" Margin="20,0" BackgroundColor="#636e72" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

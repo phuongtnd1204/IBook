@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
             <SearchBar Placeholder="Nhập tên sách"/>
-            <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}">
+            <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="100" >
@@ -24,9 +24,10 @@
                                 <Image Source="{Binding Hinh}" HeightRequest="90" WidthRequest="60"/>
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
                                     <Label Text="{Binding TenSach}" />
-                                    <Label Text="{Binding TacGia}" />
+                                    <Label Text="{Binding SoLuong}" />
                                 </StackLayout>
                                 <Label Text="{Binding GiaBan}" VerticalOptions="End" VerticalTextAlignment="End"/>
+
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
             <SearchBar  Placeholder="Nhập tên đăng nhập"/>
-            <ListView ItemsSource="{Binding UserList}" >
+            <ListView ItemsSource="{Binding UserList}" SelectionMode="None" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

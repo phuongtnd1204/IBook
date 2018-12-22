@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using IBook.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,9 +9,15 @@ namespace IBook
 {
     public partial class App : Application
     {
+        public static IList<string> listChon = null ;
+        public static User mainUser = null;
         public App()
         {
             InitializeComponent();
+            mainUser = new User();
+            listChon = new List<string>();
+            listChon.Add("1");
+            listChon.Add("2");
             MainPage = new NavigationPage(new View.PageLogin());
         }
 

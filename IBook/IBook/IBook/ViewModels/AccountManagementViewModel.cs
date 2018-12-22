@@ -22,13 +22,10 @@ namespace IBook.ViewModels
         }
         private UserRepository userRepository { get; set; }
         public ObservableCollection<User> UserList { get; set; }
-<<<<<<< HEAD
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string PropertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
         }
-=======
->>>>>>> e9974ea328a6a44cb0a3bef504f054bcde0ec58f
     }
 }

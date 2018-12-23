@@ -27,7 +27,7 @@ namespace IBook.ViewModels
             if (await service.UpdateUser(user))
             {
                 App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thành công", "OK");
-                App.Current.MainPage.Navigation.PushAsync(new View.PageUserAccount());
+                App.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());
             }
             else
             {

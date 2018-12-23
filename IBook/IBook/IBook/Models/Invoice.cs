@@ -11,7 +11,7 @@ namespace IBook.Models
         public int MaHoaDon { get; set; }
 
         public int MaNguoiDung { get; set; }
-        public int NgayHoaDon { get; set; }
+        public DateTime NgayHoaDon { get; set; }
         public int TongTien { get; set; }
         public string DiaChi { get; set; }
     }

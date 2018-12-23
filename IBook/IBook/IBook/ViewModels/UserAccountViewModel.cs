@@ -37,6 +37,7 @@ namespace IBook.ViewModels
 
         private void LogOut()
         {
+            App.listChon = null;
             App.mainUser = null;
             Application.Current.MainPage.Navigation.PushAsync(new View.PageLogin());
         }

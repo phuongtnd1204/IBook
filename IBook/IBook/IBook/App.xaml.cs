@@ -16,8 +16,6 @@ namespace IBook
             InitializeComponent();
             mainUser = new User();
             listChon = new List<string>();
-            listChon.Add("1");
-            listChon.Add("2");
             MainPage = new NavigationPage(new View.PageLogin());
         }
 

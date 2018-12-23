@@ -26,9 +26,9 @@ namespace IBook.Repository
         {
 
         }
-        public void SelectById()
+        public BookKind SelectById(int id)
         {
-
+            return service.SelectBookKind(id);
         }
         public void Delete()
         {

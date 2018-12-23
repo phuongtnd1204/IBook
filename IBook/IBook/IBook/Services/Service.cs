@@ -23,6 +23,8 @@ namespace IBook.Services
             urlHome = "https://webapplication120181217021027.azurewebsites.net/";
             Client  = new HttpClient();
         }
+
+
         public int SignIn(string tendn, string matkhau)
         {
             URL = urlHome + "api/user/LogIn";
@@ -66,7 +68,35 @@ namespace IBook.Services
             }
             else return false;
         }
-        
+
+        public async Task<bool> ConfirmInvoice(Invoice invoice)
+        {
+            URL = urlHome + "api/invoice/add";
+            var json = JsonConvert.SerializeObject(invoice);
+
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await Client.PostAsync(URL, data);
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public async Task<bool> ConfirmInvoiceDetail(InvoiceDetail invoiceDetail)
+        {
+            URL = urlHome + "api/invoicedetail/add";
+            var json = JsonConvert.SerializeObject(invoiceDetail);
+
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await Client.PostAsync(URL, data);
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else return false;
+        }
+
         public async Task<List<User>> ListAllUser()
         {
             URL = urlHome + "api/users";
@@ -86,6 +116,35 @@ namespace IBook.Services
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<Book>>();
             return userList;
         }
+
+        public async Task<Book> SelectBook( int id)
+        {
+            URL = urlHome + "api/book?masach=" + id;
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+            var book = JObject.Parse(responseList)["Result"].ToObject<Book>();
+            return book;
+        }
+
+        public async Task<Author> SelectAuthor(int id)
+        {
+            URL = urlHome + "api/author?matacgia=" + id;
+            var httpResponse = Client.GetAsync(URL).Result;
+            var responseList = httpResponse.Content.ReadAsStringAsync().Result;
+            var author = JObject.Parse(responseList)["Result"].ToObject<Author>();
+            return author;
+        }
+
+        public BookKind SelectBookKind(int id)
+        {
+            URL = urlHome + "api/bookkind?matheloai=" + id;
+            var httpResponse = Client.GetAsync(URL).Result;
+            var responseList =  httpResponse.Content.ReadAsStringAsync().Result;
+            var bookKind = JObject.Parse(responseList)["Result"].ToObject<BookKind>();
+            return bookKind;
+        }
+
         public async Task<List<BookKind>> ListAllBookKind()
         {
             URL = urlHome + "api/bookkinds";
@@ -123,6 +182,23 @@ namespace IBook.Services
             }
         }
 
+        public async Task<bool> UpdateBook(Book book)
+        {
+            URL = urlHome + "api/book/update";
+            var json = JsonConvert.SerializeObject(book);
+
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await Client.PutAsync(URL, data);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public async Task<List<Book>> ListChosenBook()
         {
@@ -137,6 +213,16 @@ namespace IBook.Services
                 bookList.Add(book);
             }
             return bookList;
+        }
+
+        public async Task<object> GetInfo(int id)
+        {
+            URL = urlHome + "api/book/author-bookkind-name?masach=" + id;
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
+            var Info = JObject.Parse(responseList)["Result"].ToObject<object>();
+            return Info;
         }
     }
 }

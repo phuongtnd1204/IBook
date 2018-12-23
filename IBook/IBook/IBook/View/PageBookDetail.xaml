@@ -1,23 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:IBook.ViewModels;assembly=IBook"
              x:Class="IBook.View.PageBookDetail">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="sv.png"/>
-    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <viewModels:BookDetailViewMode/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout Padding="10">
-            <Image Source="{Binding Hinh}" HorizontalOptions="CenterAndExpand" HeightRequest="200"/>
-            <Label Text="TÊN SÁCH"/>
-            <Entry  Text="{Binding TenSach}" />
-            <Picker  ItemDisplayBinding="{Binding TenTacGia}">
-            </Picker>
-            <Picker ItemDisplayBinding="{Binding TenTheLoai}">
-            </Picker>
-            <Label Text="SỐ LƯỢNG"/>
-            <Entry  Text="{Binding SoLuong}" Keyboard="Numeric"/>
-            <Label Text="GIÁ"/>
-            <Entry Text="{Binding GiaBan}" Keyboard="Numeric"/>
-        </StackLayout>
+        <ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions >
+
+
+            <Image Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" Source="{Binding _book.Hinh}" HorizontalOptions="CenterAndExpand" HeightRequest="200"/>
+                <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="TÊN SÁCH"/>
+                <Label  Grid.Column="1" Grid.Row="1" Text="{Binding _book.TenSach}" />
+                <Label Grid.Column="0" Grid.Row="2" FontAttributes="Bold" Text="TÊN TÁC GIẢ"/>
+                <Label Grid.Column="1" Grid.Row="2" Text="{Binding author.TenTacGia}">
+                </Label>
+                <Label Grid.Column="0" Grid.Row="3" FontAttributes="Bold" Text="TÊN THỂ LOẠI"/>
+                <Label Grid.Column="1" Grid.Row="3" Text="{Binding bookKind.TenTheLoai}">
+                </Label>
+                <Label Grid.Column="0" Grid.Row="4" FontAttributes="Bold" Text="SỐ LƯỢNG"/>
+                <Label Grid.Column="1" Grid.Row="4" Text="{Binding _book.SoLuong}" />
+                <Label Grid.Column="0" Grid.Row="5" FontAttributes="Bold" Text="GIÁ"/>
+                <Label Grid.Column="1" Grid.Row="5" Text="{Binding _book.GiaBan}" />
+                <Button Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Text="THÊM VÀO GIỎ HÀNG"  Command="{Binding AddToCart}" VerticalOptions="End"></Button>
+            </Grid>
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

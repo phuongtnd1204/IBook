@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmode="clr-namespace:IBook.ViewModels"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              x:Class="IBook.View.PageUserAccount"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.BindingContext>

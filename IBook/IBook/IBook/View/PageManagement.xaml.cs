@@ -21,4 +21,8 @@ namespace IBook.View
             return true;
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b
 }

@@ -41,7 +41,8 @@ namespace IBook.Services
                 }
                 else
                 {
-                    App.Current.Properties["ID"] = user.MaNguoiDung;
+                    App.mainUser = new User();
+                    App.mainUser = user;
                     if (user.IsAdmin == 1)
                         return 1;
                     else
@@ -103,6 +104,7 @@ namespace IBook.Services
             var authorList = JObject.Parse(responseList)["Result"].ToObject<List<Author>>();
             return authorList;
         }
+<<<<<<< HEAD
         public async Task<int> GetSumMoney(DateTime date)
         {
             URL = urlHome + "api/invoice/report-by-month";
@@ -112,6 +114,41 @@ namespace IBook.Services
             var responseList = await httpResponse.Content.ReadAsStringAsync();
             var sum = JObject.Parse(responseList)["Result"].ToObject<int>();
             return sum;
+=======
+
+        public async Task<bool> UpdateUser(User user)
+        {
+            URL = urlHome + "api/user/update";
+            var json = JsonConvert.SerializeObject(user);
+
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await Client.PutAsync(URL, data);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public async Task<List<Book>> ListChosenBook()
+        {
+            List<Book> bookList = new List<Book>();
+            for (int i = 0; i < App.listChon.Count; i++)
+            {
+                URL = urlHome + "api/book?masach=" + App.listChon[i];
+                var httpResponse = await Client.GetAsync(URL);
+                var responseList = await httpResponse.Content.ReadAsStringAsync();
+                var book = JObject.Parse(responseList)["Result"].ToObject<Book>();
+                book.SoLuong = 1;
+                bookList.Add(book);
+            }
+            return bookList;
+>>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b
         }
     }
 }

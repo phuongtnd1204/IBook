@@ -8,6 +8,7 @@ namespace IBook.ViewModels
 {
     public class ManagementViewModel
     {
+        public string TenNguoiDung { get; set; }
         public ICommand ToUserCommand { get; private set; }
         public ICommand ToBookCommand { get; private set; }
         public ICommand ToAuthorCommand { get; private set; }
@@ -16,12 +17,18 @@ namespace IBook.ViewModels
         public ICommand ToReportCommand { get; private set; }
         public ManagementViewModel()
         {
+            ShowName();
             ToUserCommand = new Command(ToUser);
             ToBookCommand = new Command(ToBook);
             ToAuthorCommand = new Command(ToAuthor);
             ToBookKindCommand = new Command(ToBookKind);
             ToLogOutCommand = new Command(LogOut);
             ToReportCommand = new Command(ToReport);
+        }
+
+        private  void ShowName()
+        {
+            TenNguoiDung = "Xin chào " + App.mainUser.TenNguoiDung;
         }
 
         private void ToUser()
@@ -42,7 +49,7 @@ namespace IBook.ViewModels
         }
         private void LogOut()
         {
-            Application.Current.Properties["ID"] = "";
+            App.mainUser = null;
             Application.Current.MainPage.Navigation.PushAsync(new View.PageLogin());
         }
         private void ToReport()

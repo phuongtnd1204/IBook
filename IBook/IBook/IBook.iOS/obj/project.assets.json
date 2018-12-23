@@ -1454,20 +1454,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Xon\\.nuget\\packages\\": {}
+    "C:\\Users\\QuocPham\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
       "projectName": "IBook.iOS",
-      "projectPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
-      "packagesPath": "C:\\Users\\Xon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook.iOS\\obj\\",
+      "projectPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook.iOS\\IBook.iOS.csproj",
+      "packagesPath": "C:\\Users\\QuocPham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Xon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\QuocPham\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1480,8 +1480,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
-              "projectPath": "C:\\Users\\Xon\\Desktop\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
+            "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook\\IBook.csproj": {
+              "projectPath": "C:\\Users\\QuocPham\\Documents\\GitHub\\IBook\\IBook\\IBook\\IBook\\IBook.csproj"
             }
           }
         }

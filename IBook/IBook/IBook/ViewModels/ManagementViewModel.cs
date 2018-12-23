@@ -13,6 +13,7 @@ namespace IBook.ViewModels
         public ICommand ToAuthorCommand { get; private set; }
         public ICommand ToBookKindCommand { get; private set; }
         public ICommand ToLogOutCommand { get; private set; }
+        public ICommand ToReportCommand { get; private set; }
         public ManagementViewModel()
         {
             ToUserCommand = new Command(ToUser);
@@ -20,6 +21,7 @@ namespace IBook.ViewModels
             ToAuthorCommand = new Command(ToAuthor);
             ToBookKindCommand = new Command(ToBookKind);
             ToLogOutCommand = new Command(LogOut);
+            ToReportCommand = new Command(ToReport);
         }
 
         private void ToUser()
@@ -43,7 +45,10 @@ namespace IBook.ViewModels
             Application.Current.Properties["ID"] = "";
             Application.Current.MainPage.Navigation.PushAsync(new View.PageLogin());
         }
-
+        private void ToReport()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new View.PageReport());
+        }
 
     }
 }

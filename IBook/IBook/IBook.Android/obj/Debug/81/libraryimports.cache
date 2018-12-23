@@ -35,10 +35,10 @@
     <Jar>obj\Debug\81\lp\27\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\28\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\29\jl\bin\classes.jar</Jar>
-    <Jar>obj\Debug\81\lp\3\jl\formsviewgroup.jar</Jar>
     <Jar>obj\Debug\81\lp\30\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\31\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\32\jl\bin\classes.jar</Jar>
     <Jar>obj\Debug\81\lp\33\jl\bin\classes.jar</Jar>
+    <Jar>obj\Debug\81\lp\5\jl\formsviewgroup.jar</Jar>
   </Jars>
 </Paths>

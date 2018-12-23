@@ -5523,8 +5523,8 @@ namespace IBook.Droid
 			// aapt resource value: 0x7F090055
 			public const int avd_show_password = 2131296341;
 			
-			// aapt resource value: 0x7F010017
-			public const int bb_bottom_bar_top_shadow = 2130771991;
+			// aapt resource value: 0x7F010018
+			public const int bb_bottom_bar_top_shadow = 2130771992;
 			
 			// aapt resource value: 0x7F010003
 			public const int BookIcon = 2130771971;
@@ -5546,6 +5546,9 @@ namespace IBook.Droid
 			
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
+			
+			// aapt resource value: 0x7F010004
+			public const int hinh5 = 2130771972;
 			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
@@ -6177,44 +6180,44 @@ namespace IBook.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
-			// aapt resource value: 0x7F010004
-			public const int round_account_box_black_18dp = 2130771972;
-			
 			// aapt resource value: 0x7F010005
-			public const int round_chevron_left_black_18dp = 2130771973;
+			public const int round_account_box_black_18dp = 2130771973;
 			
 			// aapt resource value: 0x7F010006
-			public const int round_chevron_right_black_18dp = 2130771974;
+			public const int round_chevron_left_black_18dp = 2130771974;
 			
 			// aapt resource value: 0x7F010007
-			public const int round_favorite_border_black_18dp = 2130771975;
+			public const int round_chevron_right_black_18dp = 2130771975;
 			
 			// aapt resource value: 0x7F010008
-			public const int round_history_black_18dp = 2130771976;
+			public const int round_favorite_border_black_18dp = 2130771976;
 			
 			// aapt resource value: 0x7F010009
-			public const int round_home_black_18dp = 2130771977;
+			public const int round_history_black_18dp = 2130771977;
 			
 			// aapt resource value: 0x7F010010
-			public const int round_keyboard_arrow_down_black_18dp = 2130771984;
+			public const int round_home_black_18dp = 2130771984;
 			
 			// aapt resource value: 0x7F010011
-			public const int round_keyboard_arrow_up_black_18dp = 2130771985;
+			public const int round_keyboard_arrow_down_black_18dp = 2130771985;
 			
 			// aapt resource value: 0x7F010012
-			public const int round_notification_important_black_18dp = 2130771986;
+			public const int round_keyboard_arrow_up_black_18dp = 2130771986;
 			
 			// aapt resource value: 0x7F010013
-			public const int round_person_outline_black_18dp = 2130771987;
+			public const int round_notification_important_black_18dp = 2130771987;
 			
 			// aapt resource value: 0x7F010014
-			public const int round_shopping_cart_black_18dp = 2130771988;
+			public const int round_person_outline_black_18dp = 2130771988;
 			
 			// aapt resource value: 0x7F010015
-			public const int sach1 = 2130771989;
+			public const int round_shopping_cart_black_18dp = 2130771989;
 			
 			// aapt resource value: 0x7F010016
-			public const int sv = 2130771990;
+			public const int sach1 = 2130771990;
+			
+			// aapt resource value: 0x7F010017
+			public const int sv = 2130771991;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;

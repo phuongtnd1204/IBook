@@ -1,8 +1,9 @@
+IBook
+System.Runtime
 BottomBar.Droid
 BottomBar.XamarinForms
 BottomNavigationBar
 FormsViewGroup
-IBook
 Newtonsoft.Json
 SQLite-net
 SQLitePCLRaw.batteries_green
@@ -12,7 +13,6 @@ SQLitePCLRaw.lib.e_sqlite3
 SQLitePCLRaw.provider.e_sqlite3
 System.Net.Http.Extensions
 System.Net.Http.Primitives
-System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Lifecycle.Common
 Xamarin.Android.Arch.Lifecycle.Runtime

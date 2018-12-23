@@ -24,15 +24,18 @@
                     <Entry Text="{Binding SoDienThoai}" Grid.Column="1" Grid.Row="1" VerticalOptions="CenterAndExpand" FontSize="Small"/>
                 </Grid>
             </StackLayout>
-            <StackLayout Orientation="Vertical" Margin="0,10" BackgroundColor="White" Padding="0,10">
+            <StackLayout Orientation="Vertical" Margin="0,10" BackgroundColor="White" Padding="0,10" >
                 <StackLayout Orientation="Horizontal" Padding="10,0">
                     <Label Text="Đổi mật khẩu" VerticalOptions="CenterAndExpand"/>
-                    <Image Source="round_keyboard_arrow_down_black_18dp.png" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+                    <Image Source="{Binding ImageChangePassword}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToChangePasswordCommand}" />
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
-                <BoxView HeightRequest="1.5" BackgroundColor="LightGray" IsVisible="False"/>
-                <Entry Placeholder="Mật khẩu hiện tại" Margin="10,0" IsVisible="False" FontSize="Small"/>
-                <Entry Placeholder="Mật khẩu mới" Margin="10,0" IsVisible="False" FontSize="Small"/>
-                <Entry Placeholder="Nhập lại mật khẩu mới" Margin="10,0" IsVisible="False" FontSize="Small"/>
+                <BoxView x:Name="LineVisible" HeightRequest="1.5" BackgroundColor="LightGray" IsVisible="{Binding LineVisible}"/>
+                <Entry Placeholder="Mật khẩu hiện tại" Margin="10,0" IsVisible="{Binding PresentPasswordVisible}" FontSize="Small"/>
+                <Entry Placeholder="Mật khẩu mới" Margin="10,0" IsVisible="{Binding NewPasswordVisible}" FontSize="Small"/>
+                <Entry Placeholder="Nhập lại mật khẩu mới" Margin="10,0" IsVisible="{Binding RepeatPasswordVisible}" FontSize="Small"/>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer />
                 </StackLayout.GestureRecognizers>

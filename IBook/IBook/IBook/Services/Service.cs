@@ -75,7 +75,6 @@ namespace IBook.Services
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<User>>();
             return userList;
         }
-<<<<<<< HEAD
 
         public async Task<List<Book>> ListAllBook()
         {
@@ -85,11 +84,6 @@ namespace IBook.Services
             //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
             var userList = JObject.Parse(responseList)["Result"].ToObject<List<Book>>();
             return userList;
-=======
-        public List<Book> ListAllBook()
-        {
-            return new List<Book>();
->>>>>>> e9974ea328a6a44cb0a3bef504f054bcde0ec58f
         }
         public async Task<List<BookKind>> ListAllBookKind()
         {
@@ -108,6 +102,16 @@ namespace IBook.Services
             //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
             var authorList = JObject.Parse(responseList)["Result"].ToObject<List<Author>>();
             return authorList;
+        }
+        public async Task<int> GetSumMoney(DateTime date)
+        {
+            URL = urlHome + "api/invoice/report-by-month";
+            var json = JsonConvert.SerializeObject(date);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await Client.PostAsync(URL,data);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            var sum = JObject.Parse(responseList)["Result"].ToObject<int>();
+            return sum;
         }
     }
 }

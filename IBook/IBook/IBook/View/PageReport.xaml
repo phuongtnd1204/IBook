@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmode="clr-namespace:IBook.ViewModels"
+             x:Class="IBook.View.PageReport"
+             Title="Thống kê">
+    <ContentPage.BindingContext>
+        <viewmode:ReportViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Tháng:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                    <Picker ItemsSource="{Binding Month}" WidthRequest="100" HorizontalOptions="End"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Năm:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                    <Picker ItemsSource="{Binding Year}" WidthRequest="100" HorizontalOptions="End"/>
+                </StackLayout>
+                <Button Text="Thống kê" Clicked="{Binding ToReport}"/>
+            </StackLayout>
+            <ListView ItemsSource="{Binding Report}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Tổng số tiền:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding TongTien}" VerticalTextAlignment="Center" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Tổng số sách:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding SoLuong}" VerticalTextAlignment="Center" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

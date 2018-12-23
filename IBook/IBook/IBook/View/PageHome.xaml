@@ -8,75 +8,28 @@
         <viewmode:HomeViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_home_black_18dp.png"/>
-                        <Label Text="Home" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_home_black_18dp.png"/>
-                        <Label Text="Home" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_home_black_18dp.png"/>
-                        <Label Text="Home" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_home_black_18dp.png"/>
-                        <Label Text="Home" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_home_black_18dp.png"/>
-                        <Label Text="Home" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_home_black_18dp.png"/>
-                        <Label Text="Home" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_home_black_18dp.png"/>
-                        <Label Text="Home" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>
-            <ScrollView Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                    <StackLayout WidthRequest="70" HeightRequest="100">
-                        <Image Source="round_account_box_black_18dp.png"/>
-                        <Label Text="Account" HorizontalOptions="CenterAndExpand"/>
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>
+        <StackLayout Padding="10">
+            <SearchBar Placeholder="Nhập tên sách" HeightRequest="35"/>
+            <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="100" >
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Xoá tất cả"/>
+                                <MenuItem Text="Xoá"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal" Margin="0,10">
+                                <Image Source="{Binding Hinh}" HeightRequest="120" WidthRequest="90"/>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding TenSach}" />
+                                    <Label Text="{Binding TacGia}" />
+                                </StackLayout>
+                                <Label Text="{Binding GiaBan}" VerticalOptions="Center" VerticalTextAlignment="End"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

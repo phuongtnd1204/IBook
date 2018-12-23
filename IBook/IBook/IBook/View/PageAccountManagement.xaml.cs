@@ -16,5 +16,5 @@ namespace IBook.View
 		{
 			InitializeComponent ();
 		}
-	}
+    }
 }

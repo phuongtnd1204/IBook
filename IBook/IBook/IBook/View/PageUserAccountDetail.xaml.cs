@@ -15,6 +15,7 @@ namespace IBook.View
 		public PageUserAccountDetail ()
 		{
 			InitializeComponent ();
-		}
+            //LineVisible.IsVisible = false;
+        }
 	}
 }

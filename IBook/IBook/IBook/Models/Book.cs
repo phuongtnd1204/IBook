@@ -9,7 +9,7 @@ namespace IBook.Models
     {
         [PrimaryKey, AutoIncrement]
         public int MaSach { get; set; }
-        public string Hinh { get; set; }
+        public object Hinh { get; set; }
         public string TenSach { get; set; }
         public string TheLoai { get; set; }
         public string TacGia { get; set; }

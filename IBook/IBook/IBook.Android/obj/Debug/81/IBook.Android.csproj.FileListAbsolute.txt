@@ -47,6 +47,7 @@ C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\res\drawable\round_shopping_cart_black_18dp.png
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\res\drawable\sach1.jpg
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\res\drawable\sv.png
+C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\res\drawable\hinh5.jpg
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\R.cs.flag
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\R.txt
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\uploadflags.txt
@@ -120,7 +121,6 @@ C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
-C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\res\drawable\hinh5.jpg
-C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\bin\Debug\netstandard2.0\IBook.dll
-C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\bin\Debug\IBook.dll.mdb
+C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\res\drawable\round_monetization_on_black_18dp.png
+C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\res\drawable\round_book_black_18dp.png
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Debug\81\linksrc\IBook.dll.mdb

@@ -10,34 +10,28 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
             <StackLayout Orientation="Vertical">
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="20,5">
                     <Label Text="Tháng:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-                    <Picker ItemsSource="{Binding Month}" WidthRequest="100" HorizontalOptions="End"/>
+                    <Picker ItemsSource="{Binding Month}" WidthRequest="100" SelectedItem="{Binding MonthSelected}" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="20,5">
                     <Label Text="Năm:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-                    <Picker ItemsSource="{Binding Year}" WidthRequest="100" HorizontalOptions="End"/>
+                    <Picker ItemsSource="{Binding Year}" WidthRequest="100" SelectedItem="{Binding YearSelected}" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
-                <Button Text="Thống kê" Clicked="{Binding ToReport}"/>
+                <Button Text="Thống kê" Command="{Binding ToReportCommand}" Margin="20,10"/>
             </StackLayout>
-            <ListView ItemsSource="{Binding Report}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Vertical">
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Tổng số tiền:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-                                    <Label Text="{Binding TongTien}" VerticalTextAlignment="Center" HorizontalOptions="End" HorizontalTextAlignment="End"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Tổng số sách:" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-                                    <Label Text="{Binding SoLuong}" VerticalTextAlignment="Center" HorizontalOptions="End" HorizontalTextAlignment="End"/>
-                                </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout Orientation="Vertical" Margin="10,20">
+                <StackLayout Orientation="Horizontal" Margin="10,5">
+                    <Image Source="round_monetization_on_black_18dp.png" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Tổng tiền:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="{Binding TongTien}" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="End"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="10,5">
+                    <Image Source="round_book_black_18dp.png" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Tổng số sách đã bán:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="{Binding SoLuong}" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="End"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

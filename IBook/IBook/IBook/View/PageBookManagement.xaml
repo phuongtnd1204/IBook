@@ -11,13 +11,8 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="10">
-<<<<<<< HEAD
             <SearchBar Placeholder="Nhập tên sách" HeightRequest="35"/>
             <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}">
-=======
-            <SearchBar Placeholder="Nhập tên sách"/>
-            <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}" SelectionMode="None">
->>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="100" >
@@ -31,12 +26,7 @@
                                     <Label Text="{Binding TenSach}" />
                                     <Label Text="{Binding SoLuong}" />
                                 </StackLayout>
-<<<<<<< HEAD
                                 <Label Text="{Binding GiaBan}" VerticalOptions="Center" VerticalTextAlignment="End"/>
-=======
-                                <Label Text="{Binding GiaBan}" VerticalOptions="End" VerticalTextAlignment="End"/>
-
->>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

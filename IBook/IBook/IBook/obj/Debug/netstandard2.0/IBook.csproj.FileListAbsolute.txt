@@ -63,7 +63,6 @@ C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\obj\Debug\netstandard
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.dll
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.pdb
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\bin\Debug\netstandard2.0\IBook.deps.json
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\bin\Debug\netstandard2.0\IBook.dll
@@ -100,9 +99,5 @@ C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.Asse
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.dll
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.pdb
-<<<<<<< HEAD
-=======
 >>>>>>> e9974ea328a6a44cb0a3bef504f054bcde0ec58f
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\View\PageReport.xaml.g.cs
-=======
->>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b

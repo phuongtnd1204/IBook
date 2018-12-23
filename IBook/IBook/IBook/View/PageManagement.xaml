@@ -13,35 +13,35 @@
     <ContentPage.Content>
         <StackLayout Padding="10" BackgroundColor="LightGray">
             <Label Text="{Binding TenNguoiDung}"/>
-            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,10">
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,15">
                 <Label Text="Quản lý user" VerticalOptions="CenterAndExpand"/>
                 <Image Source="round_chevron_right_black_18dp.png" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ToUserCommand}"/>
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,10">
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,15">
                 <Label Text="Quản lý sách" VerticalOptions="CenterAndExpand"/>
                 <Image Source="round_chevron_right_black_18dp.png" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ToBookCommand}" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,10">
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,15">
                 <Label Text="Quản lý thể loại" VerticalOptions="CenterAndExpand"/>
                 <Image Source="round_chevron_right_black_18dp.png" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ToBookKindCommand}" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,10">
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,15">
                 <Label Text="Quản lý tác giả" VerticalOptions="CenterAndExpand"/>
                 <Image Source="round_chevron_right_black_18dp.png" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ToAuthorCommand}" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,10">
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,15">
                 <Label Text="Thống kê" VerticalOptions="CenterAndExpand"/>
                 <Image Source="round_chevron_right_black_18dp.png" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
                 <StackLayout.GestureRecognizers>

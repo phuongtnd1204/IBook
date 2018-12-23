@@ -28,9 +28,13 @@ namespace IBook.Repository
         {
             return await service.ListAllUser();
         }
-        public async Task<bool> Update(User user)
+        public async Task<bool> UpdateUser(User user)
         {
             return await service.UpdateUser(user);
+        }
+        public async Task<bool> CheckExistAccount(User user)
+        {
+            return await service.CheckExistAccount(user);
         }
         public void Delete()
         {

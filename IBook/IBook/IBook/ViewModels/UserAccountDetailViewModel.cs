@@ -1,30 +1,29 @@
 ﻿using IBook.Models;
 using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
-=======
-using System.ComponentModel;
-using System.Text;
-using System.Windows.Input;
-using IBook.Models;
 using IBook.Services;
->>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b
 using Xamarin.Forms;
+using IBook.Repository;
 
 namespace IBook.ViewModels
 {
     public class UserAccountDetailViewModel : INotifyPropertyChanged
     {
-<<<<<<< HEAD
         public ICommand ToChangePasswordCommand { get; private set; }
         private bool line;
+        string presentpassword;
+        string newpassword;
+        string repeatpassword;
         private ImageSource image;
         public UserAccountDetailViewModel()
         {
+            user = new User();
+            user = App.mainUser;
+            userRepository = new UserRepository();
+            UpdateCommand = new Command(Update);
             ToChangePasswordCommand = new Command(ToChangePassword);
             image= "round_keyboard_arrow_down_black_18dp.png";
 
@@ -46,6 +45,33 @@ namespace IBook.ViewModels
                 NewPasswordVisible = false;
                 RepeatPasswordVisible = false;
                 ImageChangePassword = "round_keyboard_arrow_down_black_18dp.png";
+            }
+        }
+        public string PresentPassword
+        {
+            get { return presentpassword; }
+            set
+            {
+                presentpassword = value;
+                RaisePropertyChanged("PresentPassword");
+            }
+        }
+        public string NewPassword
+        {
+            get { return newpassword; }
+            set
+            {
+                newpassword = value;
+                RaisePropertyChanged("NewPassword");
+            }
+        }
+        public string RepeatPassword
+        {
+            get { return repeatpassword; }
+            set
+            {
+                repeatpassword = value;
+                RaisePropertyChanged("RepeatPassword");
             }
         }
         public bool LineVisible
@@ -97,31 +123,49 @@ namespace IBook.ViewModels
         private void RaisePropertyChanged(string PropertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
-=======
-        private Service service;
+        }
+        private UserRepository userRepository;
         public User user { get; set; }
         public ICommand UpdateCommand { get; private set; }
-        public UserAccountDetailViewModel()
-        {
-            user = new User();
-            user = App.mainUser;
-            service = new Service();
-            UpdateCommand = new Command(Update);
-        }
 
         private async void Update()
         {
-            if (await service.UpdateUser(user))
+            if (LineVisible == true)
             {
-                App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thành công", "OK");
-                App.Current.MainPage.Navigation.PushAsync(new View.PageUserAccount());
+                if (NewPassword != RepeatPassword)
+                {
+                    App.Current.MainPage.DisplayAlert("Thông báo", "Nhập lại mật khẩu không đúng!", "OK");
+                }
+                else if (user.MatKhau == PresentPassword)
+                {
+                    user.MatKhau = NewPassword;
+                    if (await userRepository.UpdateUser(user))
+                    {
+                        App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thành công", "OK");
+                        App.Current.MainPage.Navigation.PushAsync(new View.PageUserAccount());
+                    }
+                    else
+                    {
+                        App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thất bại", "OK");
+                    }
+                }
+                else
+                {
+                    App.Current.MainPage.DisplayAlert("Thông báo", "Mật khẩu sai!", "OK");
+                }
             }
             else
             {
-                App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thất bại", "OK");
+                if (await userRepository.UpdateUser(user))
+                {
+                    App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thành công", "OK");
+                    App.Current.MainPage.Navigation.PushAsync(new View.PageUserAccount());
+                }
+                else
+                {
+                    App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thất bại", "OK");
+                }
             }
-           
->>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b
         }
     }
 }

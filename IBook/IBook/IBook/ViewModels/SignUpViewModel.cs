@@ -73,7 +73,11 @@ namespace IBook.ViewModels
         #region Func
         public async void SignUp()
         {
-            if(await userRepository.SignUp(user))
+            if(await userRepository.CheckExistAccount(user))
+            {
+                Application.Current.MainPage.DisplayAlert("Thông báo", "Tài khoản này đã tồn tại!", "OK");
+            }
+            else if(await userRepository.SignUp(user))
             {
                 Application.Current.MainPage.DisplayAlert("Thông báo", "Đăng ký thành công", "OK");
                 Application.Current.MainPage.Navigation.PopAsync();

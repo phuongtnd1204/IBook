@@ -104,18 +104,30 @@ namespace IBook.Services
             var authorList = JObject.Parse(responseList)["Result"].ToObject<List<Author>>();
             return authorList;
         }
-<<<<<<< HEAD
-        public async Task<int> GetSumMoney(DateTime date)
+        public async Task<object> ReportMoney(DateTime date)
         {
-            URL = urlHome + "api/invoice/report-by-month";
-            var json = JsonConvert.SerializeObject(date);
+            var URL = urlHome + "api/invoice/report-by-month";
+            var d = new { NgayHoaDon = date.ToString("yyyy/MM/dd") };
+            var json = JsonConvert.SerializeObject(d);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var httpResponse = await Client.PostAsync(URL,data);
-            var responseList = await httpResponse.Content.ReadAsStringAsync();
-            var sum = JObject.Parse(responseList)["Result"].ToObject<int>();
-            return sum;
-=======
 
+            var httpResponse = await Client.PostAsync(URL, data);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            var report = JObject.Parse(responseList)["Result"].ToObject<object>();
+            return report;
+        }
+        public async Task<object> ReportQuantity(DateTime date)
+        {
+            var URL = urlHome + "api/invoicedetail/report-by-month";
+            var d = new { NgayHoaDon = date.ToString("yyyy/MM/dd") };
+            var json = JsonConvert.SerializeObject(d);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var httpResponse = await Client.PostAsync(URL, data);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            var report = JObject.Parse(responseList)["Result"].ToObject<object>();
+            return report;
+        }
         public async Task<bool> UpdateUser(User user)
         {
             URL = urlHome + "api/user/update";
@@ -134,6 +146,21 @@ namespace IBook.Services
             }
         }
 
+        public async Task<bool> CheckExistAccount(User user)
+        {
+            URL = urlHome + "api/user/search/username";
+            var json = JsonConvert.SerializeObject(user);
+
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await Client.PostAsync(URL, data);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            var username = JObject.Parse(responseList)["Result"].ToObject<User>();
+            if (username == null)
+            {
+                return false;
+            }
+            else return true;
+        }
 
         public async Task<List<Book>> ListChosenBook()
         {
@@ -148,7 +175,6 @@ namespace IBook.Services
                 bookList.Add(book);
             }
             return bookList;
->>>>>>> 1ba767c71696e104071086c7b26aaec07964a31b
         }
     }
 }

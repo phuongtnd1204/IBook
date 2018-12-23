@@ -21,12 +21,12 @@
                             <ViewCell Height="100" >
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="{Binding }" HeightRequest="90" WidthRequest="60"/>
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
                                         <Label Text="{Binding TenSach }" />
                                         <Label Text="{Binding GiaBan}" />
                                     </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Entry Text="{Binding SoLuong, Mode=TwoWay}"></Entry>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                        <Entry Text="{Binding SoLuong, Mode=TwoWay}" Keyboard="Numeric" HorizontalTextAlignment="End"></Entry>
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>

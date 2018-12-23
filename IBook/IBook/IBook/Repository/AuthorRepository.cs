@@ -27,9 +27,9 @@ namespace IBook.Repository
         {
 
         }
-        public void SelectById()
+        public async Task<Author>  SelectById(int id)
         {
-
+            return  service.SelectAuthor(id).Result;
         }
         public void Delete()
         {

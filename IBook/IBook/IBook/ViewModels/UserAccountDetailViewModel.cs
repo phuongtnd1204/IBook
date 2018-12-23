@@ -132,6 +132,7 @@ namespace IBook.ViewModels
         {
             if (LineVisible == true)
             {
+<<<<<<< HEAD
                 if (NewPassword != RepeatPassword)
                 {
                     App.Current.MainPage.DisplayAlert("Thông báo", "Nhập lại mật khẩu không đúng!", "OK");
@@ -153,6 +154,10 @@ namespace IBook.ViewModels
                 {
                     App.Current.MainPage.DisplayAlert("Thông báo", "Mật khẩu sai!", "OK");
                 }
+=======
+                App.Current.MainPage.DisplayAlert("Thông báo", "Cập nhật thành công", "OK");
+                App.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());
+>>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
             }
             else
             {

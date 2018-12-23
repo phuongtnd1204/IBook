@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Devices>
+<<<<<<< HEAD
   <Device id="192.168.161.101:5555">
     <ResultingAbi>x86</ResultingAbi>
+=======
+  <Device id="54e756180903">
+    <ResultingAbi>arm64-v8a</ResultingAbi>
+>>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
     <SdkVersion>24</SdkVersion>
   </Device>
 </Devices>

@@ -16,5 +16,9 @@ namespace IBook.View
 		{
 			InitializeComponent ();
 		}
-	}
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+    }
 }

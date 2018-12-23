@@ -27,13 +27,13 @@ namespace IBook.Repository
         {
             return await service.ListChosenBook();
         }
-        public void Update()
+        public async Task<bool> Update(Book book)
         {
-
+            return await service.UpdateBook(book);
         }
-        public void SelectById()
+        public async Task<Book> SelectById(int id)
         {
-
+            return await service.SelectBook(id);
         }
         public void Delete(string ID)
         {

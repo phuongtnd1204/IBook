@@ -72,7 +72,6 @@ C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook\obj\Debug\netstandard
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\bin\Debug\netstandard2.0\IBook.deps.json
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\bin\Debug\netstandard2.0\IBook.dll
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\bin\Debug\netstandard2.0\IBook.pdb
-C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\IBook.csprojAssemblyReference.cache
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Xon\Desktop\IBook\IBook\IBook\IBook\obj\Debug\netstandard2.0\View\PageAccountDetail.xaml.g.cs

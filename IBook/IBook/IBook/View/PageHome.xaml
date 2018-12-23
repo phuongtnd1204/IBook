@@ -7,7 +7,11 @@
     <ContentPage.BindingContext>
         <viewmode:HomeViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Chi tiết" Command="{Binding  ToDetailCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
+<<<<<<< HEAD
         <StackLayout Padding="10">
             <SearchBar Placeholder="Nhập tên sách" HeightRequest="35"/>
             <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}">
@@ -30,6 +34,32 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+=======
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <SearchBar Placeholder="Nhập tên sách"/>
+                <ListView HasUnevenRows='True'  ItemsSource="{Binding BookList}" SelectedItem="{Binding ChosenBook}">
+                    <ListView.ItemTemplate>
+                       <DataTemplate>
+                           <ViewCell Height="100" >
+                               <ViewCell.ContextActions>
+                                   <MenuItem Text="Xoá tất cả"/>
+                                   <MenuItem Text="Xoá"/>
+                               </ViewCell.ContextActions>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Hinh}" HeightRequest="90" WidthRequest="60"/>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding TenSach}" />
+                                    </StackLayout>
+                                    <Label Text="{Binding GiaBan}" VerticalOptions="End" VerticalTextAlignment="End"/>
+                                </StackLayout>
+                            </ViewCell>
+                       </DataTemplate>
+                   </ListView.ItemTemplate>
+               </ListView>
+          
+>>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

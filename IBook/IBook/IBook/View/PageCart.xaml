@@ -3,43 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmode="clr-namespace:IBook.ViewModels"
              x:Class="IBook.View.PageCart"
-             
              x:Name="Cart">
     <ContentPage.BindingContext>
         <viewmode:CartViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cập nhật giỏ hàng" Command="{Binding UpdateCommand}"/>
-        <ToolbarItem Text="Xoá" Command="{Binding DeleteBookCommand}"/>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="10" Orientation="Vertical">
-                <ListView HasUnevenRows='True' ItemsSource="{Binding BooksToShow}" SelectedItem="{Binding ChosenBook}">
+        <StackLayout>
+            <ScrollView Padding="10" Orientation="Vertical">
+                <ListView x:Name="BooksToShow" HasUnevenRows='True' ItemsSource="{Binding BooksToShow}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell Height="100" >
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding }" HeightRequest="90" WidthRequest="60"/>
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                <StackLayout Orientation="Horizontal" x:Name="Item">
+                                    <Image Source="{Binding Hinh}" HeightRequest="90" WidthRequest="60"/>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="200">
                                         <Label Text="{Binding TenSach }" />
                                         <Label Text="{Binding GiaBan}" />
                                     </StackLayout>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                                        <Entry Text="{Binding SoLuong, Mode=TwoWay}" Keyboard="Numeric" HorizontalTextAlignment="End"></Entry>
+                                    <StackLayout HeightRequest="25" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                        <Entry Text="{Binding SoLuong, Mode=TwoWay}" Keyboard="Numeric" HorizontalOptions="Start" WidthRequest="30"></Entry>
                                     </StackLayout>
+                                    <Button Image="round_close_black_18dp.png" WidthRequest="30" Margin="0,25"
+                                            Command="{Binding DeleteBookCommand}" 
+                                            BindingContext="{Binding Source={x:Reference BooksToShow}, Path=BindingContext}"
+                                            CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+            </ScrollView>
+            <StackLayout Orientation="Vertical" Margin="10,10">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Tổng tiền"  FontAttributes="Bold" HorizontalTextAlignment="Start"></Label>
-                    <Label Text="{Binding TongTien}" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" FontAttributes="Bold"></Label>
+                    <Label Text="Tổng tiền"  FontAttributes="Bold" HorizontalTextAlignment="Start" FontSize="20"></Label>
+                    <Label Text="{Binding TongTien}" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" FontAttributes="Bold" FontSize="20"></Label>
                 </StackLayout>
                 <Entry Placeholder="Nhập địa chỉ của bạn" Text="{Binding DiaChi}"></Entry>
-                <Button Text="Xác nhận mua" Command="{Binding ConfirmCommand}"></Button>
+                <Button Text="Xác nhận mua" Command="{Binding ConfirmCommand}" Margin="20,0" BackgroundColor="#636e72" TextColor="White"></Button>
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

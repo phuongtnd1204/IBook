@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using IBook.Models;
@@ -17,66 +19,74 @@ namespace IBook.ViewModels
         private  InvoiceRepository invoiceRepository { get; set; }
         private InvoiceDetailRepository InvoiceDetailRepository { get; set; }
         private BookRepository bookRepository { get; set; }
-        public  ObservableCollection<Book> BooksToShow { get; set; }
+        private ObservableCollection<Book> _booksToShow;
+        public ObservableCollection<Book> BooksToShow
+        {
+            get { return _booksToShow; }
+            set
+            {
+                _booksToShow = value;
+                RaisePropertyChanged(nameof(BooksToShow));
+                RaisePropertyChanged(nameof(TongTien));
+            }
+        }
         private string _tongTien;
         public string TongTien
         {
-            get { return _tongTien; }
+            get
+            {
+                if (BooksToShow == null) return "0";
+                int TongValue = 0;
+                for (int i = 0; i < BooksToShow.Count; i++)
+                {
+                    TongValue += (BooksToShow[i].GiaBan * BooksToShow[i].SoLuong);
+                }
+                return TongTien = TongValue.ToString();
+            }
             set
             {
                 _tongTien = value;
-                RaisePropertyChanged(TongTien);
+                RaisePropertyChanged("TongTien");
             }
         }
-        public  string DiaChi { get; set; }
+        private string _diachi;
+        public  string DiaChi {
+            get { return _diachi; }
+            set
+            {
+                _diachi = value;
+                RaisePropertyChanged("DiaChi");
+                ((Command)ConfirmCommand).ChangeCanExecute();
+            }
+        }
         public  ICommand ConfirmCommand { get; set; }
         public ICommand DeleteBookCommand { get; set; }
-        public ICommand UpdateCommand { get; set; }
         public  Book ChosenBook { get; set; }
         public CartViewModel()
         {
+            this.DeleteBookCommand = new Command<Book>(DeleteBook);
             if (App.listChon != null)
             {
                 invoice = new Invoice();
                 InvoiceDetail = new InvoiceDetail();
                 bookRepository = new BookRepository();
-                ConfirmCommand = new Command(Confirm);
-                DeleteBookCommand = new Command(DeleteBook, CanExe);
-                UpdateCommand = new Command(Update);
+                ConfirmCommand = new Command(Confirm,CanExe);
                 invoiceRepository = new InvoiceRepository();
                 InvoiceDetailRepository = new InvoiceDetailRepository();
                 ChosenBook = new Book();
                 LoadData();
             }
-
-        }
-
-        private void Update()
-        {
-            TinhTong();
         }
 
         private bool CanExe()
         {
-            if (ChosenBook != null)
-                return true;
-            else
-            {
-                return false;
-            }
+            if (string.IsNullOrEmpty(_diachi)) return false;
+            return true;
         }
-
-        private void DeleteBook()
+        private void DeleteBook(Book item)
         {
-            if (ChosenBook == null)
-            {
-                App.Current.MainPage.DisplayAlert("Thông báo", "Chưa có sách nào được chọn", "OK");
-            }
-            else
-            {
-                App.listChon.Remove(ChosenBook.MaSach.ToString());
-                LoadData();
-            }
+            App.listChon.Remove(item.MaSach.ToString());
+            LoadData();
         }
         private async void Confirm()
         {
@@ -84,25 +94,20 @@ namespace IBook.ViewModels
             invoice.TongTien = int.Parse(TongTien);
             invoice.DiaChi = DiaChi;
             invoice.NgayHoaDon = DateTime.Now;
-            
-            
+            await invoiceRepository.Add(invoice);
             for (int i = 0; i < BooksToShow.Count; i++)
             {
-                InvoiceDetail= new InvoiceDetail(){MaHoaDon = 1, DonGia = BooksToShow[i].GiaBan, MaSach = BooksToShow[i].MaSach, SoLuong = BooksToShow[i].SoLuong,ThanhTien = (BooksToShow[i].GiaBan * BooksToShow[i].SoLuong) };
+                InvoiceDetail = new InvoiceDetail() { MaHoaDon = 1, DonGia = BooksToShow[i].GiaBan, MaSach = BooksToShow[i].MaSach, SoLuong = BooksToShow[i].SoLuong, ThanhTien = (BooksToShow[i].GiaBan * BooksToShow[i].SoLuong) };
                 await InvoiceDetailRepository.Add(InvoiceDetail);
             }
-
-            if (await invoiceRepository.Add(invoice))
-            {
-                App.Current.MainPage.DisplayAlert("Thông báo", "Đặt mua thành công", "OK");
-                App.listChon.Clear();
-                TongTien = "0";
-                DiaChi = "";
-                RaisePropertyChanged(DiaChi);
-                LoadData();
-
-            }
-
+            App.Current.MainPage.DisplayAlert("Thông báo", "Đặt mua thành công", "OK");
+            App.mainUser.SoHoaDon = (int.Parse(App.mainUser.SoHoaDon) + 1).ToString();
+            App.mainUser.Tien = (int.Parse(App.mainUser.Tien) + invoice.TongTien).ToString();
+            App.listChon.Clear();
+            TongTien = "0";
+            DiaChi = "";
+            RaisePropertyChanged("DiaChi");
+            LoadData();
         }
 
         private async void LoadData()
@@ -110,7 +115,13 @@ namespace IBook.ViewModels
             if (App.listChon != null)
             {
                 BooksToShow = new ObservableCollection<Book>(await bookRepository.ListSomeBook());
-                TinhTong();
+                foreach (Book item in BooksToShow)
+                {
+                    object str = item.Hinh;
+                    item.Hinh = Xamarin.Forms.ImageSource.FromStream(
+                    () => new MemoryStream(Convert.FromBase64String(str.ToString())));
+                    item.SoLuong = 1;
+                }
                 RaisePropertyChanged("BooksToShow");
                 RaisePropertyChanged("TongTien");
             }
@@ -118,19 +129,7 @@ namespace IBook.ViewModels
             {
                 BooksToShow = null;
             }
-
         }
-
-        public void TinhTong()
-        {
-            int TongValue = 0;
-            for (int i = 0; i < BooksToShow.Count; i++)
-            {
-                TongValue += (BooksToShow[i].GiaBan * BooksToShow[i].SoLuong);
-            }
-            TongTien = TongValue.ToString();
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string PropertyName)
         {

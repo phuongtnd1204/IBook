@@ -6,18 +6,10 @@
     <ContentPage.BindingContext>
         <viewmode:BookManagementViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="add.png"/>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="10">
-<<<<<<< HEAD
-            <SearchBar Placeholder="Nhập tên sách" HeightRequest="35"/>
-            <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}">
-=======
             <SearchBar Placeholder="Nhập tên sách"/>
             <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}" SelectionMode="None" SelectedItem="{Binding }">
->>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="100" >

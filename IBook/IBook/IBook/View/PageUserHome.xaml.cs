@@ -15,6 +15,8 @@ namespace IBook.View
 		public PageUserHome ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasBackButton(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 	}
 }

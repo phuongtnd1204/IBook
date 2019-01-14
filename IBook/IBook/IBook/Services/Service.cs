@@ -204,8 +204,6 @@ namespace IBook.Services
                 return false;
             }
         }
-
-<<<<<<< HEAD
         public async Task<bool> CheckExistAccount(User user)
         {
             URL = urlHome + "api/user/search/username";
@@ -220,24 +218,6 @@ namespace IBook.Services
                 return false;
             }
             else return true;
-=======
-        public async Task<bool> UpdateBook(Book book)
-        {
-            URL = urlHome + "api/book/update";
-            var json = JsonConvert.SerializeObject(book);
-
-            var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var httpResponse = await Client.PutAsync(URL, data);
-            var responseList = await httpResponse.Content.ReadAsStringAsync();
-            if (httpResponse.IsSuccessStatusCode)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
->>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
         }
 
         public async Task<List<Book>> ListChosenBook()
@@ -249,7 +229,6 @@ namespace IBook.Services
                 var httpResponse = await Client.GetAsync(URL);
                 var responseList = await httpResponse.Content.ReadAsStringAsync();
                 var book = JObject.Parse(responseList)["Result"].ToObject<Book>();
-                book.SoLuong = 1;
                 bookList.Add(book);
             }
             return bookList;
@@ -263,6 +242,24 @@ namespace IBook.Services
             //var userList = JsonConvert.DeserializeObject<List<User>>(responseList);
             var Info = JObject.Parse(responseList)["Result"].ToObject<object>();
             return Info;
+        }
+
+        public async Task<object> ReportBillQuantity(int id)
+        {
+            var URL = urlHome + "api/invoice/reportbill-by-user?manguoidung=" + id;
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            var report = JObject.Parse(responseList)["Result"].ToObject<object>();
+            return report;
+        }
+
+        public async Task<object> ReportMoneyQuantity(int id)
+        {
+            var URL = urlHome + "api/invoice/reportmoney-by-user?manguoidung=" + id;
+            var httpResponse = await Client.GetAsync(URL);
+            var responseList = await httpResponse.Content.ReadAsStringAsync();
+            var report = JObject.Parse(responseList)["Result"].ToObject<object>();
+            return report;
         }
     }
 }

@@ -2,9 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmode="clr-namespace:IBook.ViewModels"
-             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
-             x:Class="IBook.View.PageUserAccount"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="IBook.View.PageUserAccount">
     <ContentPage.BindingContext>
         <viewmode:UserAccountViewModel/>
     </ContentPage.BindingContext>
@@ -51,9 +49,9 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Label Text="Số đơn hàng thành công" Grid.Column="0" Grid.Row="0"/>
-                    <Label Text="0" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="{Binding BillQuantity}" Grid.Column="1" Grid.Row="0"/>
                     <Label Text="Số tiền đã thanh toán" Grid.Column="0" Grid.Row="1"/>
-                    <Label Text="0" Grid.Column="1" Grid.Row="1"/>
+                    <Label Text="{Binding MoneyQuantity}" Grid.Column="1" Grid.Row="1"/>
                 </Grid>
             </StackLayout>
             <StackLayout BackgroundColor="White" Margin="0,5">

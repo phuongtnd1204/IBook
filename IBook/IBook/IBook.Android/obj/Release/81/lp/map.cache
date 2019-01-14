@@ -4,6 +4,8 @@ BottomNavigationBar
 FormsViewGroup
 IBook
 Newtonsoft.Json
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
 SQLite-net
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2

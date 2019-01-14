@@ -113,6 +113,8 @@ class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"IBook.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.Connectivity.Abstractions.dll",
+		"Plugin.Connectivity.dll",
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_green.dll",
 		"SQLitePCLRaw.batteries_v2.dll",

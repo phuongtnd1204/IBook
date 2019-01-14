@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IBook.Models;
+using IBook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,11 @@ namespace IBook.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageBookDetail : ContentPage
 	{
-		public PageBookDetail ()
+		public PageBookDetail(Book book)
 		{
 			InitializeComponent ();
-		}
+            this.BindingContext = new BookDetailViewMode(book);
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 	}
 }

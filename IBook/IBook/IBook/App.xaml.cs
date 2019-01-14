@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using IBook.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,6 +11,7 @@ namespace IBook
     public partial class App : Application
     {
         public static IList<string> listChon = null ;
+        public static ObservableCollection<Book> listBook = null;
         public static User mainUser = null;
         public App()
         {
@@ -17,6 +19,7 @@ namespace IBook
             mainUser = new User();
             listChon = new List<string>();
             MainPage = new NavigationPage(new View.PageLogin());
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         protected override void OnStart()

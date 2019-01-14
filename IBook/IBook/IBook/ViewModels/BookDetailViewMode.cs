@@ -23,24 +23,21 @@ namespace IBook.ViewModels
         public BookKind bookKind { get; set; }
         public  ICommand AddToCart { get; set; }
         public Book _book { get; set; }
-        public BookDetailViewMode()
+        public BookDetailViewMode(Book book)
         {
-
             BookRepository = new BookRepository();
             author= new Author();
             bookKind=new BookKind();
             authorRepository= new AuthorRepository();
             BookKindRepository = new BookKindRepository();
             _book = new Book();
+            _book = book;
             //service = new Service();
             Load();
             AddToCart = new Command(Add);
-
-
         }
         private async void Load()
         {
-            _book = (Book)App.Current.Properties["ID"];
             author =  authorRepository.SelectById(int.Parse(_book.TacGia)).Result;
             bookKind = BookKindRepository.SelectById(int.Parse(_book.TheLoai));
             
@@ -52,7 +49,8 @@ namespace IBook.ViewModels
             {
                 App.listChon.Add(_book.MaSach.ToString());
                 App.Current.MainPage.DisplayAlert("Thông báo", "Thêm thành công", "OK");
-                App.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());
+                App.Current.MainPage.Navigation.PopAsync();
+                //App.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());
             }
             else
             {

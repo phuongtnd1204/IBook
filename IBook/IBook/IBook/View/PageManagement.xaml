@@ -11,7 +11,7 @@
         <ToolbarItem Text="Log out" Command="{Binding ToLogOutCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Padding="10" BackgroundColor="LightGray">
+        <StackLayout Padding="10" BackgroundColor="#ecf0f1">
             <Label Text="{Binding TenNguoiDung}"/>
             <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,5" Padding="10,15">
                 <Label Text="Quản lý user" VerticalOptions="CenterAndExpand"/>

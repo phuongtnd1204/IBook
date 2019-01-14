@@ -15,7 +15,7 @@ namespace IBook.View
 		public PageUserAccountDetail ()
 		{
 			InitializeComponent ();
-            //LineVisible.IsVisible = false;
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 	}
 }

@@ -8,6 +8,8 @@ C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\8
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\Mono.Android.dll
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\mscorlib.dll
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\Newtonsoft.Json.dll
+C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\Plugin.Connectivity.Abstractions.dll
+C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\Plugin.Connectivity.dll
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\SQLite-net.dll
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\SQLitePCLRaw.batteries_green.dll
 C:\Users\QuocPham\Documents\GitHub\IBook\IBook\IBook\IBook.Android\obj\Release\81\android\assets\SQLitePCLRaw.batteries_v2.dll

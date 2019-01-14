@@ -4,18 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< HEAD
-=======
 using IBook.Models;
 using IBook.Services;
->>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
 
 namespace IBook.Repository
 {
     public class InvoiceRepository
     {
-<<<<<<< HEAD
-        private Service service { get; set; }
         public InvoiceRepository()
         {
             service = new Service();
@@ -28,19 +23,25 @@ namespace IBook.Repository
         {
             return await service.ReportQuantity(date);
         }
+        public async Task<object> ReportMoneyQuantity(int id)
+        {
+            return await service.ReportMoneyQuantity(id);
+        }
+
+        public async Task<object> ReportBillQuantity(int id)
+        {
+            return await service.ReportBillQuantity(id);
+        }
+
         public void Add()
-=======
+        {
+
+        }
 
         private  Service service { get; set; }
         public async Task<bool> Add(Invoice invoice)
->>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
         {
             return await service.ConfirmInvoice(invoice);
-        }
-
-        public InvoiceRepository()
-        {
-            service = new Service();
         }
         public void SelectById()
         {

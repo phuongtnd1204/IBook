@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IBook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,20 @@ namespace IBook.View
 		public PageCart ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
 		}
         protected override bool OnBackButtonPressed()
         {
             return true;
+        }
+        protected async override void OnAppearing()
+        {
+            Reload();
+            base.OnAppearing();
+        }
+        async void Reload()
+        {
+            BindingContext = new CartViewModel();
         }
     }
 }

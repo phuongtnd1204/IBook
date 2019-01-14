@@ -15,6 +15,7 @@ namespace IBook.View
 		public PageHome ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
 		}
         protected override bool OnBackButtonPressed()
         {

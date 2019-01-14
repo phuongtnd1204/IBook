@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using IBook.Models;
+using IBook.Repository;
 using Xamarin.Forms;
 
 namespace IBook.ViewModels
 {
-    public class UserAccountViewModel
+    public class UserAccountViewModel: INotifyPropertyChanged
     {
         public UserAccountViewModel()
         {
@@ -17,11 +19,49 @@ namespace IBook.ViewModels
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             HoVaTen = App.mainUser.TenNguoiDung;
             SoDienThoai = App.mainUser.SoDienThoai;
             TenDangNhap = App.mainUser.TenDangNhap;
+            BillQuantity = App.mainUser.SoHoaDon;
+            MoneyQuantity = App.mainUser.Tien;
+        }
+        public object bill;
+        public object money;
+        private InvoiceRepository invoiceRepository { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged(string PropertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+        }
+
+        public object BillQuantity
+        {
+            get { return bill; }
+            set
+            {
+                if (value == null)
+                {
+                    bill = 0;
+                }
+                bill = value;
+                RaisePropertyChanged("BillQuantity");
+            }
+        }
+
+        public object MoneyQuantity
+        {
+            get { return money; }
+            set
+            {
+                if (value == null)
+                {
+                    money = 0;
+                }
+                money = value;
+                RaisePropertyChanged("MoneyQuantity");
+            }
         }
 
         public ICommand ToDetailCommand { get; private set; }

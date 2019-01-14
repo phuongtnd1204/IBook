@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Plugin.Connectivity;
 
 namespace IBook.ViewModels
 {
@@ -65,32 +66,38 @@ namespace IBook.ViewModels
             else
                 return true;
         }
-        private void SignIn()
+        private async void SignIn()
         {
-            switch (userRepository.SignIn(_tenDangNhap, _matKhau))
+            if (!CrossConnectivity.Current.IsConnected)
             {
-                case 0:
-                    {
-                        Application.Current.MainPage.DisplayAlert("Thông báo", "Thông tin đăng nhập sai", "OK");
-                        break;
-                    }
-                case 1:
-                    {
-                        Application.Current.MainPage.Navigation.PushAsync(new View.PageManagement());
-                        break;
-                    }
-                case 2:
-                    {
-                        Application.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());
-                        break;
-                    }
+                await Application.Current.MainPage.DisplayAlert("Thông báo", "Lỗi kết nối", "OK");
+            }
+            else
+            {
+                switch (userRepository.SignIn(_tenDangNhap, _matKhau))
+                {
+                    case 0:
+                        {
+                            Application.Current.MainPage.DisplayAlert("Thông báo", "Thông tin đăng nhập sai", "OK");
+                            break;
+                        }
+                    case 1:
+                        {
+                            Application.Current.MainPage.Navigation.PushAsync(new View.PageManagement());
+                            break;
+                        }
+                    case 2:
+                        {
+                            Application.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());
+                            break;
+                        }
 
-                default:
-                    {
-                        Application.Current.MainPage.DisplayAlert("Thông báo", "Lỗi kết nối", "OK");
-                        break;
-                    }
-
+                    default:
+                        {
+                            Application.Current.MainPage.DisplayAlert("Thông báo", "Lỗi kết nối", "OK");
+                            break;
+                        }
+                }
             }
         }
         private void SignUp()

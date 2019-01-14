@@ -2,64 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmode="clr-namespace:IBook.ViewModels"
-             x:Class="IBook.View.PageHome"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="IBook.View.PageHome">
     <ContentPage.BindingContext>
         <viewmode:HomeViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Chi tiết" Command="{Binding  ToDetailCommand}"/>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-<<<<<<< HEAD
-        <StackLayout Padding="10">
-            <SearchBar Placeholder="Nhập tên sách" HeightRequest="35"/>
-            <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell Height="100" >
-                            <ViewCell.ContextActions>
-                                <MenuItem Text="Xoá tất cả"/>
-                                <MenuItem Text="Xoá"/>
-                            </ViewCell.ContextActions>
-                            <StackLayout Orientation="Horizontal" Margin="0,10">
-                                <Image Source="{Binding Hinh}" HeightRequest="120" WidthRequest="90"/>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                    <Label Text="{Binding TenSach}" />
-                                    <Label Text="{Binding TacGia}" />
-                                </StackLayout>
-                                <Label Text="{Binding GiaBan}" VerticalOptions="Center" VerticalTextAlignment="End"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-=======
         <ScrollView>
             <StackLayout Orientation="Vertical">
                 <SearchBar Placeholder="Nhập tên sách"/>
-                <ListView HasUnevenRows='True'  ItemsSource="{Binding BookList}" SelectedItem="{Binding ChosenBook}">
+                <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}" SelectedItem="{Binding ChosenBook}">
                     <ListView.ItemTemplate>
-                       <DataTemplate>
-                           <ViewCell Height="100" >
-                               <ViewCell.ContextActions>
-                                   <MenuItem Text="Xoá tất cả"/>
-                                   <MenuItem Text="Xoá"/>
-                               </ViewCell.ContextActions>
+                       <DataTemplate >
+                            <ViewCell Height="100" >
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding Hinh}" HeightRequest="90" WidthRequest="60"/>
+                                    <Image Source="{Binding Hinh}" HeightRequest="120" WidthRequest="60"/>
                                     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                        <Label Text="{Binding TenSach}" />
+                                        <Label Text="{Binding TenSach}" HorizontalOptions="Start" VerticalOptions="Center" Margin="15,15"/>
+                                        <Label Text="{Binding GiaBan}" HorizontalOptions="End" VerticalOptions="Center" Margin="15,0"/>
                                     </StackLayout>
-                                    <Label Text="{Binding GiaBan}" VerticalOptions="End" VerticalTextAlignment="End"/>
                                 </StackLayout>
                             </ViewCell>
                        </DataTemplate>
                    </ListView.ItemTemplate>
                </ListView>
-          
->>>>>>> 984b6d526975cac5c6e8334dd2f3039eb56a09b3
-        </StackLayout>
+          </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

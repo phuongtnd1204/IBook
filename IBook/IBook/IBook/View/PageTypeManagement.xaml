@@ -6,9 +6,6 @@
     <ContentPage.BindingContext>
         <viewmode:TypeManagementViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="add.png"/>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="10">
             <SearchBar Placeholder="Nhập tên thể loại"/>

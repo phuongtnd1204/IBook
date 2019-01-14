@@ -14,5 +14,7 @@ namespace IBook.Models
         public string SoDienThoai { get; set; }
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
+        public string Tien { get; set; }
+        public string SoHoaDon { get; set; }
     }
 }

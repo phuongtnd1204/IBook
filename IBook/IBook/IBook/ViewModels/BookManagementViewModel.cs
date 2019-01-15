@@ -14,7 +14,11 @@ namespace IBook.ViewModels
         public BookManagementViewModel()
         {
             bookRepository = new BookRepository();
-            GetBookList();
+            if (App.listBook == null)
+            {
+                GetBookList();
+            }
+            else BookList = App.listBook;
         }
         public async void GetBookList()
         {
@@ -24,6 +28,7 @@ namespace IBook.ViewModels
                 item.Hinh= Xamarin.Forms.ImageSource.FromStream(
                 () => new MemoryStream(Convert.FromBase64String(str.ToString())));
             }
+            App.listBook = BookList;
             RaisePropertyChanged("BookList");
         }
         private BookRepository bookRepository { get; set; }

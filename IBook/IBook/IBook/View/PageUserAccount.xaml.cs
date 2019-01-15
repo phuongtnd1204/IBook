@@ -20,6 +20,7 @@ namespace IBook.View
 		}
         protected override bool OnBackButtonPressed()
         {
+            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
             return true;
         }
         protected async override void OnAppearing()

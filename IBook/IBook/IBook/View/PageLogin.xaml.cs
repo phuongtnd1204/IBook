@@ -18,7 +18,7 @@ namespace IBook.View
 		}
         protected override bool OnBackButtonPressed()
         {
-            return true;
+            return base.OnBackButtonPressed();
         }
     }
 }

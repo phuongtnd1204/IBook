@@ -20,8 +20,10 @@ namespace IBook.View
 		}
         protected override bool OnBackButtonPressed()
         {
+            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
             return true;
         }
+
         protected async override void OnAppearing()
         {
             Reload();
@@ -30,6 +32,11 @@ namespace IBook.View
         async void Reload()
         {
             BindingContext = new CartViewModel();
+        }
+
+        private void Selected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

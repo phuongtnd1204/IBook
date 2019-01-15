@@ -17,7 +17,7 @@ namespace IBook.ViewModels
 
         public HomeViewModel()
         {
-            App.listChon = new List<string>();
+            App.listChon = new List<Book>();
             bookRepository = new BookRepository();
             if (App.listBook == null)
             {

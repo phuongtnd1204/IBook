@@ -45,9 +45,10 @@ namespace IBook.ViewModels
 
         private void Add()
         {
-            if (!App.listChon.Contains(_book.MaSach.ToString()))
+            if (!App.listChon.Contains(_book))
             {
-                App.listChon.Add(_book.MaSach.ToString());
+                _book.SoLuong = 1;
+                App.listChon.Add(_book);
                 App.Current.MainPage.DisplayAlert("Thông báo", "Thêm thành công", "OK");
                 App.Current.MainPage.Navigation.PopAsync();
                 //App.Current.MainPage.Navigation.PushAsync(new View.PageUserHome());

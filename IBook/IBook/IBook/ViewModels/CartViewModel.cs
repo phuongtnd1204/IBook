@@ -27,7 +27,6 @@ namespace IBook.ViewModels
             {
                 _booksToShow = value;
                 RaisePropertyChanged(nameof(BooksToShow));
-                RaisePropertyChanged(nameof(TongTien));
             }
         }
         private string _tongTien;
@@ -40,13 +39,14 @@ namespace IBook.ViewModels
                 for (int i = 0; i < BooksToShow.Count; i++)
                 {
                     TongValue += (BooksToShow[i].GiaBan * BooksToShow[i].SoLuong);
+                    App.listChon[i].SoLuong = BooksToShow[i].SoLuong;
                 }
                 return TongTien = TongValue.ToString();
             }
             set
             {
                 _tongTien = value;
-                RaisePropertyChanged("TongTien");
+                RaisePropertyChanged(nameof(TongTien));
             }
         }
         private string _diachi;
@@ -61,7 +61,6 @@ namespace IBook.ViewModels
         }
         public  ICommand ConfirmCommand { get; set; }
         public ICommand DeleteBookCommand { get; set; }
-        public  Book ChosenBook { get; set; }
         public CartViewModel()
         {
             this.DeleteBookCommand = new Command<Book>(DeleteBook);
@@ -73,7 +72,6 @@ namespace IBook.ViewModels
                 ConfirmCommand = new Command(Confirm,CanExe);
                 invoiceRepository = new InvoiceRepository();
                 InvoiceDetailRepository = new InvoiceDetailRepository();
-                ChosenBook = new Book();
                 LoadData();
             }
         }
@@ -85,7 +83,7 @@ namespace IBook.ViewModels
         }
         private void DeleteBook(Book item)
         {
-            App.listChon.Remove(item.MaSach.ToString());
+            App.listChon.Remove(item);
             LoadData();
         }
         private async void Confirm()
@@ -114,14 +112,7 @@ namespace IBook.ViewModels
         {
             if (App.listChon != null)
             {
-                BooksToShow = new ObservableCollection<Book>(await bookRepository.ListSomeBook());
-                foreach (Book item in BooksToShow)
-                {
-                    object str = item.Hinh;
-                    item.Hinh = Xamarin.Forms.ImageSource.FromStream(
-                    () => new MemoryStream(Convert.FromBase64String(str.ToString())));
-                    item.SoLuong = 1;
-                }
+                BooksToShow = new ObservableCollection<Book>(App.listChon);
                 RaisePropertyChanged("BooksToShow");
                 RaisePropertyChanged("TongTien");
             }

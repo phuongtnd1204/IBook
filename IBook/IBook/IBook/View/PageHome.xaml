@@ -9,8 +9,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical">
-                <SearchBar Placeholder="Nhập tên sách"/>
-                <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}" SelectedItem="{Binding ChosenBook}">
+                <ListView HasUnevenRows='True' ItemsSource="{Binding BookList}" SelectedItem="{Binding ChosenBook}" ItemSelected="Selected">
                     <ListView.ItemTemplate>
                        <DataTemplate >
                             <ViewCell Height="100" >

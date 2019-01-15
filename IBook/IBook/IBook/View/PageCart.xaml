@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ScrollView Padding="10" Orientation="Vertical">
-                <ListView x:Name="BooksToShow" HasUnevenRows='True' ItemsSource="{Binding BooksToShow}">
+                <ListView x:Name="BooksToShow" HasUnevenRows="True" ItemsSource="{Binding BooksToShow}" ItemSelected="Selected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell Height="100" >

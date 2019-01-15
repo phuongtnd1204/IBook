@@ -10,14 +10,14 @@ namespace IBook
 {
     public partial class App : Application
     {
-        public static IList<string> listChon = null ;
+        public static List<Book> listChon = null ;
         public static ObservableCollection<Book> listBook = null;
         public static User mainUser = null;
         public App()
         {
             InitializeComponent();
             mainUser = new User();
-            listChon = new List<string>();
+            listChon = new List<Book>();
             MainPage = new NavigationPage(new View.PageLogin());
             NavigationPage.SetHasNavigationBar(this, false);
         }
